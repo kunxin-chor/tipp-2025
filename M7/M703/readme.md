@@ -625,6 +625,109 @@ Search for products based on various criteria.
 }
 ```
 
+## User Management
+### Users
+
+#### POST /users
+Create a new user.
+
+**Request Body:**
+```json
+{
+  "username": "new_user",
+  "email": "new_user@example.com",
+  "fullName": "New User",
+  "role": "staff",
+  "password": "securepassword",
+  "contactInfo": {
+    "phone": "555-678-1234",
+    "address": "123 New St, New City"
+  },
+  "permissions": ["inventory_read", "sales_create", "reports_read"]
+}
+```
+
+**Response:**
+```json
+{
+  "success": true,
+  "message": "User created successfully"
+}
+```
+
+#### POST /auth/login
+Log in as a user and get a JWT.
+
+**Request Body:**
+```json
+{
+  "username": "existing_user",
+  "password": "userpassword"
+}
+```
+
+**Response:**
+```json
+{
+  "success": true,
+  "token": "your_jwt_token"
+}
+```
+
+#### PUT /users/{id}
+Update an existing user.
+
+**Request Body:**
+```json
+{
+  "email": "updated_user@example.com",
+  "fullName": "Updated User",
+  "role": "manager",
+  "password":"asd1234",
+  "contactInfo": {
+    "phone": "555-987-6543",
+    "address": "456 Updated St, Updated City"
+  },
+  "permissions": ["inventory_full", "sales_full", "reports_full", "user_management"]
+}
+```
+
+**Response:**
+```json
+{
+  "success": true,
+  "message": "User updated successfully"
+}
+```
+
+### User Fields
+
+| Field         | Type     | Description                                      |
+|---------------|----------|--------------------------------------------------|
+| `username`    | String   | Unique username for the user                     |
+| `email`       | String   | Email address of the user                        |
+| `fullName`    | String   | Full name of the user                            |
+| `role`        | String   | Role of the user (e.g., `manager`, `staff`)      |
+| `password`    | String   | Password for the user (only for creation)        |
+| `contactInfo` | Object   | Contact information of the user                  |
+| `contactInfo.phone`       | String   | Phone number of the user                         |
+| `contactInfo.address`     | String   | Address of the user                              |
+| `permissions` | Array    | List of permissions assigned to the user         |
+
+
+**Permissions:**
+
+| Permission          | Description                                      |
+|---------------------|--------------------------------------------------|
+| `inventory_full`    | Full access to inventory management              |
+| `inventory_read`    | Read-only access to inventory                    |
+| `sales_full`        | Full access to sales management                  |
+| `sales_create`      | Ability to create sales                          |
+| `reports_full`      | Full access to reports                           |
+| `reports_read`      | Read-only access to reports                      |
+| `user_management`   | Ability to manage users                          |
+
+
 ## Error Codes
 
 | Code | Description |
