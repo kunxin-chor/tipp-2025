@@ -1,7 +1,7 @@
 # RESTful API Documentation
 ## Game & Comic Store Inventory Management System
 
-This document outlines the RESTful API endpoints for the Game & Comic Store Inventory Management System. The API provides interfaces for managing suppliers, products, expansions, transactions, and categories.
+This document outlines the RESTful API endpoints for the Game & Comic Store Inventory Management System.
 
 ## Base URL
 
@@ -21,15 +21,6 @@ Authorization: Bearer <your_token>
 
 All responses are returned in JSON format with appropriate HTTP status codes.
 
-Standard response structure:
-```json
-{
-  "success": true,
-  "data": {},
-  "message": "Operation successful"
-}
-```
-
 Error response structure:
 ```json
 {
@@ -46,7 +37,7 @@ Error response structure:
 ### Suppliers
 
 #### GET /suppliers
-Retrieve a list of all suppliers.
+Retrieve all suppliers.
 
 **Query Parameters:**
 - `active` (optional): Filter by active status (true/false)
@@ -54,7 +45,27 @@ Retrieve a list of all suppliers.
 **Response:**
 ```json
 {
-  "success": true   
+  "success": true,
+  "suppliers": [
+    {
+      "_id": "6030d5c9f6e7b54f2b1e8d01",
+      "name": "GameDistro Inc.",
+      "contactPerson": "Robert Chen",
+      "email": "sales@gamedistro.com",
+      "phone": "1-800-555-1234",
+      "address": {
+        "street": "123 Distribution Way",
+        "city": "Los Angeles",
+        "state": "CA",
+        "zipCode": "90001",
+        "country": "USA"
+      },
+      "paymentTerms": "Net 30",
+      "productCategories": ["6020f4b8e7f5c43d5a0f7c01", "6020f4b8e7f5c43d5a0f7c05"],
+      "active": true
+    }
+  ],
+  "total": 6
 }
 ```
 
@@ -64,7 +75,27 @@ Retrieve a specific supplier by ID.
 **Response:**
 ```json
 {
-  "success": true
+  "success": true,
+  "supplier": {
+    "_id": "6030d5c9f6e7b54f2b1e8d01",
+    "name": "GameDistro Inc.",
+    "contactPerson": "Robert Chen",
+    "email": "sales@gamedistro.com",
+    "phone": "1-800-555-1234",
+    "address": {
+      "street": "123 Distribution Way",
+      "city": "Los Angeles",
+      "state": "CA",
+      "zipCode": "90001",
+      "country": "USA"
+    },
+    "paymentTerms": "Net 30",
+    "productCategories": ["6020f4b8e7f5c43d5a0f7c01", "6020f4b8e7f5c43d5a0f7c05"],
+    "active": true,
+    "notes": "Primary supplier for video games and accessories",
+    "createdAt": "2024-01-15T11:30:00Z",
+    "updatedAt": "2024-01-15T11:30:00Z"
+  }
 }
 ```
 
@@ -95,7 +126,8 @@ Create a new supplier.
 **Response:**
 ```json
 {
-  "success": true 
+  "success": true,
+  "message": "Supplier created successfully"
 }
 ```
 
@@ -115,7 +147,8 @@ Update an existing supplier.
 **Response:**
 ```json
 {
-  "success": true 
+  "success": true,
+  "message": "Supplier updated successfully"
 }
 ```
 
@@ -125,14 +158,15 @@ Delete a supplier.
 **Response:**
 ```json
 {
-  "success": true
+  "success": true,
+  "message": "Supplier deleted successfully"
 }
 ```
 
 ### Products
 
 #### GET /products
-Retrieve a list of all products.
+Retrieve all products.
 
 **Query Parameters:**
 - `limit` (optional): Number of results to return (default: 20)
@@ -144,31 +178,28 @@ Retrieve a list of all products.
 ```json
 {
   "success": true,
-  "data": {
-    "products": [
-      {
-        "_id": "6040c6d0e5a9c67d3f2d9e01",
-        "name": "The Last Guardian 2",
-        "sku": "VG-PS5-TLG2",
-        "description": "Sequel to the acclaimed adventure game featuring a boy and a mythical creature",
-        "price": 69.99,
-        "quantity": 25,
-        "category": "6020f4b8e7f5c43d5a0f7c01",
-        "subcategory": "6020f4b8e7f5c43d5a0f7c11",
-        "supplier": {
-          "_id": "6030d5c9f6e7b54f2b1e8d01",
-          "name": "GameDistro Inc."
-        },
-        "images": [
-          "thelastguardian2_cover.jpg",
-          "thelastguardian2_screenshot1.jpg"
-        ]
-      }
-    ],
-    "total": 9,
-    "page": 1,
-    "limit": 20
-  }
+  "products": [
+    {
+      "_id": "6040c6d0e5a9c67d3f2d9e01",
+      "name": "The Last Guardian 2",
+      "sku": "VG-PS5-TLG2",
+      "description": "Sequel to the acclaimed adventure game featuring a boy and a mythical creature",
+      "price": 69.99,
+      "quantity": 25,
+      "category": "6020f4b8e7f5c43d5a0f7c11",
+      "supplier": {
+        "_id": "6030d5c9f6e7b54f2b1e8d01",
+        "name": "GameDistro Inc."
+      },
+      "images": [
+        "thelastguardian2_cover.jpg",
+        "thelastguardian2_screenshot1.jpg"
+      ]
+    }
+  ],
+  "total": 9,
+  "page": 1,
+  "limit": 20
 }
 ```
 
@@ -179,43 +210,40 @@ Retrieve a specific product by ID.
 ```json
 {
   "success": true,
-  "data": {
-    "product": {
-      "_id": "6040c6d0e5a9c67d3f2d9e01",
-      "name": "The Last Guardian 2",
-      "sku": "VG-PS5-TLG2",
-      "description": "Sequel to the acclaimed adventure game featuring a boy and a mythical creature",
-      "price": 69.99,
-      "cost": 42.50,
-      "quantity": 25,
-      "category": "6020f4b8e7f5c43d5a0f7c01",
-      "subcategory": "6020f4b8e7f5c43d5a0f7c11",
-      "supplier": {
-        "_id": "6030d5c9f6e7b54f2b1e8d01",
-        "name": "GameDistro Inc."
-      },
-      "releaseDate": "2024-11-15T00:00:00Z",
-      "platform": "PlayStation 5",
-      "publisher": "Sony Interactive Entertainment",
-      "condition": "New",
-      "isDigital": false,
-      "images": [
-        "thelastguardian2_cover.jpg",
-        "thelastguardian2_screenshot1.jpg"
-      ],
-      "tags": ["adventure", "puzzle", "exclusive"],
-      "ratings": {
-        "average": 4.8,
-        "count": 156
-      },
-      "location": {
-        "aisle": "A",
-        "shelf": "3",
-        "bin": "12"
-      },
-      "createdAt": "2024-11-20T09:30:00Z",
-      "updatedAt": "2025-03-01T14:15:00Z"
-    }
+  "product": {
+    "_id": "6040c6d0e5a9c67d3f2d9e01",
+    "name": "The Last Guardian 2",
+    "sku": "VG-PS5-TLG2",
+    "description": "Sequel to the acclaimed adventure game featuring a boy and a mythical creature",
+    "price": 69.99,
+    "cost": 42.50,
+    "quantity": 25,
+    "category": "6020f4b8e7f5c43d5a0f7c11",
+    "supplier": {
+      "_id": "6030d5c9f6e7b54f2b1e8d01",
+      "name": "GameDistro Inc."
+    },
+    "releaseDate": "2024-11-15T00:00:00Z",
+    "platform": "PlayStation 5",
+    "publisher": "Sony Interactive Entertainment",
+    "condition": "New",
+    "isDigital": false,
+    "images": [
+      "thelastguardian2_cover.jpg",
+      "thelastguardian2_screenshot1.jpg"
+    ],
+    "tags": ["adventure", "puzzle", "exclusive"],
+    "ratings": {
+      "average": 4.8,
+      "count": 156
+    },
+    "location": {
+      "aisle": "A",
+      "shelf": "3",
+      "bin": "12"
+    },
+    "createdAt": "2024-11-20T09:30:00Z",
+    "updatedAt": "2025-03-01T14:15:00Z"
   }
 }
 ```
@@ -224,32 +252,6 @@ Retrieve a specific product by ID.
 Create a new product.
 
 **Request Body:**
-
-| Field | Type | Required | Description |
-|-------|------|----------|-------------|
-| `name` | string | Yes | Product name |
-| `sku` | string | Yes | Stock keeping unit (unique identifier) |
-| `description` | string | Yes | Product description |
-| `price` | number | Yes | Retail price |
-| `cost` | number | Yes | Wholesale cost |
-| `quantity` | number | Yes | Inventory quantity |
-| `category` | string | Yes | Category ID |
-| `subcategory` | string | Yes | Subcategory ID |
-| `supplier` | string | Yes | Supplier ID |
-| `platform` | string | No | Gaming platform (for video games) |
-| `publisher` | string | No | Publisher name |
-| `author` | string | No | Author name (for books/comics) |
-| `releaseDate` | string | No | Release date (ISO format) |
-| `condition` | string | No | Product condition (New, Used, etc.) |
-| `isDigital` | boolean | No | Whether product is digital or physical |
-| `tags` | array of strings | No | Product tags for categorization |
-| `images` | array of strings | No | Image filenames/URLs |
-| `location` | object | No | Physical store location |
-| `location.aisle` | string | No | Store aisle identifier |
-| `location.shelf` | string | No | Shelf identifier |
-| `location.bin` | string | No | Bin identifier |
-
-**Example Request Body:**
 ```json
 {
   "name": "New Game Title",
@@ -258,8 +260,7 @@ Create a new product.
   "price": 59.99,
   "cost": 35.50,
   "quantity": 20,
-  "category": "6020f4b8e7f5c43d5a0f7c01",
-  "subcategory": "6020f4b8e7f5c43d5a0f7c11",
+  "category": "6020f4b8e7f5c43d5a0f7c11",
   "supplier": "6030d5c9f6e7b54f2b1e8d01",
   "platform": "PlayStation 5",
   "publisher": "Game Publisher",
@@ -278,41 +279,15 @@ Create a new product.
 **Response:**
 ```json
 {
-  "success": true
- 
+  "success": true,
+  "message": "Product created successfully"
 }
 ```
 
-#### PUT /products/{id}
+#### PATCH /products/{id}
 Update an existing product.
 
 **Request Body:**
-
-| Field | Type | Required | Description |
-|-------|------|----------|-------------|
-| `name` | string | No | Product name |
-| `sku` | string | No | Stock keeping unit (unique identifier) |
-| `description` | string | No | Product description |
-| `price` | number | No | Retail price |
-| `cost` | number | No | Wholesale cost |
-| `quantity` | number | No | Inventory quantity |
-| `category` | string | No | Category ID |
-| `subcategory` | string | No | Subcategory ID |
-| `supplier` | string | No | Supplier ID |
-| `platform` | string | No | Gaming platform (for video games) |
-| `publisher` | string | No | Publisher name |
-| `author` | string | No | Author name (for books/comics) |
-| `releaseDate` | string | No | Release date (ISO format) |
-| `condition` | string | No | Product condition (New, Used, etc.) |
-| `isDigital` | boolean | No | Whether product is digital or physical |
-| `tags` | array of strings | No | Product tags for categorization |
-| `images` | array of strings | No | Image filenames/URLs |
-| `location` | object | No | Physical store location |
-| `location.aisle` | string | No | Store aisle identifier |
-| `location.shelf` | string | No | Shelf identifier |
-| `location.bin` | string | No | Bin identifier |
-
-**Example Request Body:**
 ```json
 {
   "price": 64.99,
@@ -324,7 +299,8 @@ Update an existing product.
 **Response:**
 ```json
 {
-  "success": true 
+  "success": true,
+  "message": "Product updated successfully"
 }
 ```
 
@@ -334,7 +310,8 @@ Delete a product.
 **Response:**
 ```json
 {
-  "success": true 
+  "success": true,
+  "message": "Product deleted successfully"
 }
 ```
 
@@ -346,8 +323,17 @@ Retrieve all expansions for a specific product.
 **Response:**
 ```json
 {
-  "success": true
- 
+  "success": true,
+  "expansions": [
+    {
+      "name": "Seafarers Expansion", 
+      "sku": "BG-STR-CATAN-SEA"
+    },
+    {
+      "name": "Cities & Knights Expansion", 
+      "sku": "BG-STR-CATAN-CK"
+    }
+  ]
 }
 ```
 
@@ -365,8 +351,8 @@ Add an expansion to a specific product.
 **Response:**
 ```json
 {
-  "success": true
-
+  "success": true,
+  "message": "Expansion added successfully"
 }
 ```
 
@@ -384,8 +370,8 @@ Update an existing expansion.
 **Response:**
 ```json
 {
-  "success": true
- 
+  "success": true,
+  "message": "Expansion updated successfully"
 }
 ```
 
@@ -395,8 +381,8 @@ Delete an expansion.
 **Response:**
 ```json
 {
-  "success": true
- 
+  "success": true,
+  "message": "Expansion deleted successfully"
 }
 ```
 
@@ -415,35 +401,33 @@ Retrieve a list of all transactions.
 ```json
 {
   "success": true,
-  "data": {
-    "transactions": [
-      {
-        "_id": "6050b7e1c4d8a98f1c3f0a01",
-        "transactionType": "sale",
-        "transactionNumber": "S240301-001",
-        "date": "2025-03-01T10:15:23Z",
-        "customer": {
-          "name": "Alex Thompson",
-          "email": "alex.thompson@example.com"
-        },
-        "items": [
-          {
-            "product": "6040c6d0e5a9c67d3f2d9e01",
-            "name": "The Last Guardian 2",
-            "quantity": 1,
-            "price": 69.99,
-            "subtotal": 69.99
-          }
-        ],
-        "subtotal": 139.98,
-        "taxAmount": 11.55,
-        "total": 151.53
-      }
-    ],
-    "total": 10,
-    "page": 1,
-    "limit": 20
-  }
+  "transactions": [
+    {
+      "_id": "6050b7e1c4d8a98f1c3f0a01",
+      "transactionType": "sale",
+      "transactionNumber": "S240301-001",
+      "date": "2025-03-01T10:15:23Z",
+      "customer": {
+        "name": "Alex Thompson",
+        "email": "alex.thompson@example.com"
+      },
+      "items": [
+        {
+          "product": "6040c6d0e5a9c67d3f2d9e01",
+          "name": "The Last Guardian 2",
+          "quantity": 1,
+          "price": 69.99,
+          "subtotal": 69.99
+        }
+      ],
+      "subtotal": 139.98,
+      "taxAmount": 11.55,
+      "total": 151.53
+    }
+  ],
+  "total": 10,
+  "page": 1,
+  "limit": 20
 }
 ```
 
@@ -454,58 +438,56 @@ Retrieve a specific transaction by ID.
 ```json
 {
   "success": true,
-  "data": {
-    "transaction": {
-      "_id": "6050b7e1c4d8a98f1c3f0a01",
-      "transactionType": "sale",
-      "transactionNumber": "S240301-001",
-      "date": "2025-03-01T10:15:23Z",
-      "customer": {
-        "name": "Alex Thompson",
-        "email": "alex.thompson@example.com",
-        "phone": "555-123-9876",
-        "membershipId": "MEM-45678"
+  "transaction": {
+    "_id": "6050b7e1c4d8a98f1c3f0a01",
+    "transactionType": "sale",
+    "transactionNumber": "S240301-001",
+    "date": "2025-03-01T10:15:23Z",
+    "customer": {
+      "name": "Alex Thompson",
+      "email": "alex.thompson@example.com",
+      "phone": "555-123-9876",
+      "membershipId": "MEM-45678"
+    },
+    "items": [
+      {
+        "product": "6040c6d0e5a9c67d3f2d9e01",
+        "name": "The Last Guardian 2",
+        "sku": "VG-PS5-TLG2",
+        "quantity": 1,
+        "price": 69.99,
+        "cost": 42.50,
+        "discount": 0,
+        "subtotal": 69.99
       },
-      "items": [
-        {
-          "product": "6040c6d0e5a9c67d3f2d9e01",
-          "name": "The Last Guardian 2",
-          "sku": "VG-PS5-TLG2",
-          "quantity": 1,
-          "price": 69.99,
-          "cost": 42.50,
-          "discount": 0,
-          "subtotal": 69.99
-        },
-        {
-          "product": "6040c6d0e5a9c67d3f2d9e07",
-          "name": "PlayStation 5 DualSense Controller",
-          "sku": "ACC-PS5-CTRL",
-          "quantity": 1,
-          "price": 69.99,
-          "cost": 45.00,
-          "discount": 0,
-          "subtotal": 69.99
-        }
-      ],
-      "paymentMethod": "credit",
-      "paymentDetails": {
-        "cardType": "Visa",
-        "lastFour": "4321",
-        "transactionId": "PYMT-8756321"
-      },
-      "subtotal": 139.98,
-      "taxRate": 8.25,
-      "taxAmount": 11.55,
-      "total": 151.53,
-      "profit": 64.03,
-      "status": "completed",
-      "notes": "Customer mentioned interest in upcoming PS5 titles",
-      "createdBy": "6010e3a7d1f5b32e4c9e6b02",
-      "updatedBy": "6010e3a7d1f5b32e4c9e6b02",
-      "createdAt": "2025-03-01T10:15:23Z",
-      "updatedAt": "2025-03-01T10:15:23Z"
-    }
+      {
+        "product": "6040c6d0e5a9c67d3f2d9e07",
+        "name": "PlayStation 5 DualSense Controller",
+        "sku": "ACC-PS5-CTRL",
+        "quantity": 1,
+        "price": 69.99,
+        "cost": 45.00,
+        "discount": 0,
+        "subtotal": 69.99
+      }
+    ],
+    "paymentMethod": "credit",
+    "paymentDetails": {
+      "cardType": "Visa",
+      "lastFour": "4321",
+      "transactionId": "PYMT-8756321"
+    },
+    "subtotal": 139.98,
+    "taxRate": 8.25,
+    "taxAmount": 11.55,
+    "total": 151.53,
+    "profit": 64.03,
+    "status": "completed",
+    "notes": "Customer mentioned interest in upcoming PS5 titles",
+    "createdBy": "6010e3a7d1f5b32e4c9e6b02",
+    "updatedBy": "6010e3a7d1f5b32e4c9e6b02",
+    "createdAt": "2025-03-01T10:15:23Z",
+    "updatedAt": "2025-03-01T10:15:23Z"
   }
 }
 ```
@@ -519,39 +501,23 @@ Retrieve a list of all categories.
 ```json
 {
   "success": true,
-  "data": {
-    "categories": [
-      {
-        "_id": "6020f4b8e7f5c43d5a0f7c01",
-        "name": "Video Games",
-        "description": "Video games for various consoles and platforms",
-        "subcategories": [
-          {
-            "_id": "6020f4b8e7f5c43d5a0f7c11",
-            "name": "PlayStation",
-            "description": "Games for PlayStation consoles"
-          },
-          {
-            "_id": "6020f4b8e7f5c43d5a0f7c12",
-            "name": "Xbox",
-            "description": "Games for Xbox consoles"
-          },
-          {
-            "_id": "6020f4b8e7f5c43d5a0f7c13",
-            "name": "Nintendo",
-            "description": "Games for Nintendo consoles"
-          },
-          {
-            "_id": "6020f4b8e7f5c43d5a0f7c14",
-            "name": "PC",
-            "description": "Games for PC platform"
-          }
-        ],
-        "taxRate": 8.25,
-        "displayOrder": 1
-      }
-    ]
-  }
+  "categories": [
+    {
+      "_id": "6020f4b8e7f5c43d5a0f7c01",
+      "name": "Video Games",
+      "description": "Video games for various consoles and platforms",
+      "taxRate": 8.25,
+      "displayOrder": 1
+    },
+    {
+      "_id": "6020f4b8e7f5c43d5a0f7c11",
+      "name": "PlayStation",
+      "description": "Games for PlayStation consoles",
+      "taxRate": 8.25,
+      "displayOrder": 6,
+      "parentCategory": "6020f4b8e7f5c43d5a0f7c01"
+    }
+  ]
 }
 ```
 
@@ -562,38 +528,14 @@ Retrieve a specific category by ID.
 ```json
 {
   "success": true,
-  "data": {
-    "category": {
-      "_id": "6020f4b8e7f5c43d5a0f7c01",
-      "name": "Video Games",
-      "description": "Video games for various consoles and platforms",
-      "subcategories": [
-        {
-          "_id": "6020f4b8e7f5c43d5a0f7c11",
-          "name": "PlayStation",
-          "description": "Games for PlayStation consoles"
-        },
-        {
-          "_id": "6020f4b8e7f5c43d5a0f7c12",
-          "name": "Xbox",
-          "description": "Games for Xbox consoles"
-        },
-        {
-          "_id": "6020f4b8e7f5c43d5a0f7c13",
-          "name": "Nintendo",
-          "description": "Games for Nintendo consoles"
-        },
-        {
-          "_id": "6020f4b8e7f5c43d5a0f7c14",
-          "name": "PC",
-          "description": "Games for PC platform"
-        }
-      ],
-      "taxRate": 8.25,
-      "displayOrder": 1,
-      "createdAt": "2024-01-10T09:00:00Z",
-      "updatedAt": "2024-01-10T09:00:00Z"
-    }
+  "category": {
+    "_id": "6020f4b8e7f5c43d5a0f7c01",
+    "name": "Video Games",
+    "description": "Video games for various consoles and platforms",
+    "taxRate": 8.25,
+    "displayOrder": 1,
+    "createdAt": "2024-01-10T09:00:00Z",
+    "updatedAt": "2024-01-10T09:00:00Z"
   }
 }
 ```
@@ -617,32 +559,30 @@ Search for transactions based on various criteria.
 ```json
 {
   "success": true,
-  "data": {
-    "transactions": [
-      {
-        "_id": "6050b7e1c4d8a98f1c3f0a01",
-        "transactionType": "sale",
-        "transactionNumber": "S240301-001",
-        "date": "2025-03-01T10:15:23Z",
-        "customer": {
-          "name": "Alex Thompson",
-          "email": "alex.thompson@example.com"
-        },
-        "items": [
-          {
-            "product": "6040c6d0e5a9c67d3f2d9e01",
-            "name": "The Last Guardian 2",
-            "quantity": 1,
-            "subtotal": 69.99
-          }
-        ],
-        "total": 151.53
-      }
-    ],
-    "total": 3,
-    "page": 1,
-    "limit": 20
-  }
+  "transactions": [
+    {
+      "_id": "6050b7e1c4d8a98f1c3f0a01",
+      "transactionType": "sale",
+      "transactionNumber": "S240301-001",
+      "date": "2025-03-01T10:15:23Z",
+      "customer": {
+        "name": "Alex Thompson",
+        "email": "alex.thompson@example.com"
+      },
+      "items": [
+        {
+          "product": "6040c6d0e5a9c67d3f2d9e01",
+          "name": "The Last Guardian 2",
+          "quantity": 1,
+          "subtotal": 69.99
+        }
+      ],
+      "total": 151.53
+    }
+  ],
+  "total": 3,
+  "page": 1,
+  "limit": 20
 }
 ```
 
@@ -651,7 +591,6 @@ Search for products based on various criteria.
 
 **Query Parameters:**
 - `category` (optional): Category ID
-- `subcategory` (optional): Subcategory ID
 - `name` (optional): Product name (partial match)
 - `minPrice` (optional): Minimum price
 - `maxPrice` (optional): Maximum price
@@ -665,27 +604,24 @@ Search for products based on various criteria.
 ```json
 {
   "success": true,
-  "data": {
-    "products": [
-      {
-        "_id": "6040c6d0e5a9c67d3f2d9e01",
-        "name": "The Last Guardian 2",
-        "sku": "VG-PS5-TLG2",
-        "description": "Sequel to the acclaimed adventure game featuring a boy and a mythical creature",
-        "price": 69.99,
-        "quantity": 25,
-        "category": "6020f4b8e7f5c43d5a0f7c01",
-        "subcategory": "6020f4b8e7f5c43d5a0f7c11",
-        "images": [
-          "thelastguardian2_cover.jpg"
-        ],
-        "tags": ["adventure", "puzzle", "exclusive"]
-      }
-    ],
-    "total": 2,
-    "page": 1,
-    "limit": 20
-  }
+  "products": [
+    {
+      "_id": "6040c6d0e5a9c67d3f2d9e01",
+      "name": "The Last Guardian 2",
+      "sku": "VG-PS5-TLG2",
+      "description": "Sequel to the acclaimed adventure game featuring a boy and a mythical creature",
+      "price": 69.99,
+      "quantity": 25,
+      "category": "6020f4b8e7f5c43d5a0f7c11",
+      "images": [
+        "thelastguardian2_cover.jpg"
+      ],
+      "tags": ["adventure", "puzzle", "exclusive"]
+    }
+  ],
+  "total": 2,
+  "page": 1,
+  "limit": 20
 }
 ```
 
