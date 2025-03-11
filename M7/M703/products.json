@@ -1,0 +1,365 @@
+[
+    {
+      "_id": {"$oid": "6040c6d0e5a9c67d3f2d9e01"},
+      "name": "The Last Guardian 2",
+      "sku": "VG-PS5-TLG2",
+      "description": "Sequel to the acclaimed adventure game featuring a boy and a mythical creature",
+      "price": 69.99,
+      "cost": 42.50,
+      "quantity": 25,
+      "category": {"$oid": "6020f4b8e7f5c43d5a0f7c01"},
+      "subcategory": {"$oid": "6020f4b8e7f5c43d5a0f7c11"},
+      "supplier": {
+        "_id": {"$oid": "6030d5c9f6e7b54f2b1e8d01"},
+        "name": "GameDistro Inc."
+      },
+      "releaseDate": {"$date": "2024-11-15T00:00:00Z"},
+      "platform": "PlayStation 5",
+      "publisher": "Sony Interactive Entertainment",
+      "condition": "New",
+      "isDigital": false,
+      "images": [
+        "thelastguardian2_cover.jpg",
+        "thelastguardian2_screenshot1.jpg"
+      ],
+      "tags": ["adventure", "puzzle", "exclusive"],
+      "ratings": {
+        "average": 4.8,
+        "count": 156
+      },
+      "location": {
+        "aisle": "A",
+        "shelf": "3",
+        "bin": "12"
+      },
+      "createdBy": {"$oid": "6010e3a7d1f5b32e4c9e6b01"},
+      "createdAt": {"$date": "2024-11-20T09:30:00Z"},
+      "updatedAt": {"$date": "2025-03-01T14:15:00Z"}
+    },
+    {
+      "_id": {"$oid": "6040c6d0e5a9c67d3f2d9e02"},
+      "name": "Batman: Dark Knight Returns - Deluxe Edition",
+      "sku": "COM-DC-TDKR",
+      "description": "Frank Miller's iconic Batman story in a deluxe hardcover edition",
+      "price": 29.99,
+      "cost": 17.25,
+      "quantity": 12,
+      "category": {"$oid": "6020f4b8e7f5c43d5a0f7c02"},
+      "subcategory": {"$oid": "6020f4b8e7f5c43d5a0f7c21"},
+      "supplier": {
+        "_id": {"$oid": "6030d5c9f6e7b54f2b1e8d02"},
+        "name": "Comic Warehouse Ltd."
+      },
+      "publisher": "DC Comics",
+      "author": "Frank Miller",
+      "condition": "New",
+      "format": "Hardcover",
+      "isbn": "9781563893421",
+      "images": [
+        "batman_dkr_cover.jpg",
+        "batman_dkr_preview.jpg"
+      ],
+      "tags": ["batman", "frank miller", "graphic novel", "dc"],
+      "ratings": {
+        "average": 4.9,
+        "count": 208
+      },
+      "location": {
+        "aisle": "B",
+        "shelf": "1",
+        "bin": "05"
+      },
+      "createdBy": {"$oid": "6010e3a7d1f5b32e4c9e6b01"},
+      "createdAt": {"$date": "2024-12-05T11:45:00Z"},
+      "updatedAt": {"$date": "2025-02-15T10:20:00Z"}
+    },
+    {
+      "_id": {"$oid": "6040c6d0e5a9c67d3f2d9e03"},
+      "name": "Halo Infinite - Collector's Edition",
+      "sku": "VG-XSX-HIC",
+      "description": "Special collector's edition of Halo Infinite with exclusive figurine",
+      "price": 149.99,
+      "cost": 89.75,
+      "quantity": 8,
+      "category": {"$oid": "6020f4b8e7f5c43d5a0f7c01"},
+      "subcategory": {"$oid": "6020f4b8e7f5c43d5a0f7c12"},
+      "supplier": {
+        "_id": {"$oid": "6030d5c9f6e7b54f2b1e8d01"},
+        "name": "GameDistro Inc."
+      },
+      "relatedProducts": [
+        {"$oid": "6040c6d0e5a9c67d3f2d9e08"},
+        {"$oid": "6040c6d0e5a9c67d3f2d9e09"}
+      ],
+      "platform": "Xbox Series X",
+      "publisher": "Microsoft Game Studios",
+      "condition": "New",
+      "isDigital": false,
+      "includes": [
+        "Game disc",
+        "Master Chief figurine",
+        "Steelbook case",
+        "Art book",
+        "Digital soundtrack"
+      ],
+      "images": [
+        "halo_infinite_collectors_front.jpg",
+        "halo_infinite_collectors_contents.jpg"
+      ],
+      "tags": ["fps", "sci-fi", "collector", "exclusive", "figurine"],
+      "ratings": {
+        "average": 4.7,
+        "count": 92
+      },
+      "location": {
+        "aisle": "A",
+        "shelf": "1",
+        "bin": "03"
+      },
+      "createdBy": {"$oid": "6010e3a7d1f5b32e4c9e6b04"},
+      "createdAt": {"$date": "2024-11-30T13:20:00Z"},
+      "updatedAt": {"$date": "2025-01-20T09:30:00Z"}
+    },
+    {
+      "_id": {"$oid": "6040c6d0e5a9c67d3f2d9e04"},
+      "name": "Spider-Man Premium Statue",
+      "sku": "COL-SPID-PREM",
+      "description": "12-inch premium statue of Spider-Man in dynamic pose",
+      "price": 199.99,
+      "cost": 120.50,
+      "quantity": 5,
+      "category": {"$oid": "6020f4b8e7f5c43d5a0f7c03"},
+      "subcategory": {"$oid": "6020f4b8e7f5c43d5a0f7c32"},
+      "supplier": {
+        "_id": {"$oid": "6030d5c9f6e7b54f2b1e8d03"},
+        "name": "Collectibles Direct"
+      },
+      "manufacturer": "Sideshow Collectibles",
+      "material": "Polystone",
+      "dimensions": "12 inches tall",
+      "limitedEdition": true,
+      "editionSize": 5000,
+      "editionNumber": "1243/5000",
+      "condition": "New",
+      "images": [
+        "spiderman_statue_front.jpg",
+        "spiderman_statue_side.jpg",
+        "spiderman_statue_back.jpg"
+      ],
+      "tags": ["marvel", "spider-man", "statue", "limited edition"],
+      "ratings": {
+        "average": 4.9,
+        "count": 47
+      },
+      "location": {
+        "aisle": "C",
+        "shelf": "2",
+        "bin": "08"
+      },
+      "createdBy": {"$oid": "6010e3a7d1f5b32e4c9e6b01"},
+      "createdAt": {"$date": "2024-12-10T15:30:00Z"},
+      "updatedAt": {"$date": "2025-02-28T11:45:00Z"}
+    },
+    {
+      "_id": {"$oid": "6040c6d0e5a9c67d3f2d9e05"},
+      "name": "Settlers of Catan",
+      "sku": "BG-STR-CATAN",
+      "description": "Award-winning strategy board game of trade and development",
+      "price": 44.99,
+      "cost": 27.25,
+      "quantity": 15,
+      "category": {"$oid": "6020f4b8e7f5c43d5a0f7c04"},
+      "subcategory": {"$oid": "6020f4b8e7f5c43d5a0f7c41"},
+      "supplier": {
+        "_id": {"$oid": "6030d5c9f6e7b54f2b1e8d04"},
+        "name": "Tabletop Games Supply"
+      },
+      "publisher": "Catan Studio",
+      "designer": "Klaus Teuber",
+      "players": "3-4",
+      "playTime": "60-120 minutes",
+      "ageRating": "10+",
+      "condition": "New",
+      "expansions": [
+        {"name": "Seafarers Expansion", "sku": "BG-STR-CATAN-SEA"},
+        {"name": "Cities & Knights Expansion", "sku": "BG-STR-CATAN-CK"}
+      ],
+      "images": [
+        "catan_box.jpg",
+        "catan_components.jpg"
+      ],
+      "tags": ["strategy", "trading", "family", "award-winning"],
+      "ratings": {
+        "average": 4.8,
+        "count": 312
+      },
+      "location": {
+        "aisle": "D",
+        "shelf": "3",
+        "bin": "02"
+      },
+      "createdBy": {"$oid": "6010e3a7d1f5b32e4c9e6b02"},
+      "createdAt": {"$date": "2024-12-15T10:45:00Z"},
+      "updatedAt": {"$date": "2025-03-05T14:30:00Z"}
+    },
+    {
+      "_id": {"$oid": "6040c6d0e5a9c67d3f2d9e06"},
+      "name": "Demon Slayer Vol. 1-5 Box Set",
+      "sku": "COM-MNG-DMSLYR",
+      "description": "Complete box set of Demon Slayer manga volumes 1-5",
+      "price": 49.99,
+      "cost": 32.50,
+      "quantity": 10,
+      "category": {"$oid": "6020f4b8e7f5c43d5a0f7c02"},
+      "subcategory": {"$oid": "6020f4b8e7f5c43d5a0f7c22"},
+      "supplier": {
+        "_id": {"$oid": "6030d5c9f6e7b54f2b1e8d05"},
+        "name": "Manga Importers Co."
+      },
+      "publisher": "Viz Media",
+      "author": "Koyoharu Gotouge",
+      "language": "English",
+      "format": "Paperback",
+      "condition": "New",
+      "images": [
+        "demon_slayer_box_set.jpg",
+        "demon_slayer_contents.jpg"
+      ],
+      "tags": ["manga", "anime", "shonen", "box set"],
+      "ratings": {
+        "average": 4.9,
+        "count": 178
+      },
+      "location": {
+        "aisle": "B",
+        "shelf": "4",
+        "bin": "10"
+      },
+      "createdBy": {"$oid": "6010e3a7d1f5b32e4c9e6b02"},
+      "createdAt": {"$date": "2024-12-18T14:20:00Z"},
+      "updatedAt": {"$date": "2025-02-10T16:30:00Z"}
+    },
+    {
+      "_id": {"$oid": "6040c6d0e5a9c67d3f2d9e07"},
+      "name": "PlayStation 5 DualSense Controller",
+      "sku": "ACC-PS5-CTRL",
+      "description": "Official Sony DualSense wireless controller for PlayStation 5",
+      "price": 69.99,
+      "cost": 45.00,
+      "quantity": 20,
+      "category": {"$oid": "6020f4b8e7f5c43d5a0f7c05"},
+      "subcategory": {"$oid": "6020f4b8e7f5c43d5a0f7c51"},
+      "supplier": {
+        "_id": {"$oid": "6030d5c9f6e7b54f2b1e8d01"},
+        "name": "GameDistro Inc."
+      },
+      "manufacturer": "Sony",
+      "color": "White",
+      "compatibility": ["PlayStation 5"],
+      "wireless": true,
+      "condition": "New",
+      "warranty": "1 year",
+      "images": [
+        "ps5_controller_front.jpg",
+        "ps5_controller_angle.jpg"
+      ],
+      "tags": ["controller", "playstation", "accessory", "gaming"],
+      "ratings": {
+        "average": 4.7,
+        "count": 245
+      },
+      "location": {
+        "aisle": "E",
+        "shelf": "2",
+        "bin": "06"
+      },
+      "createdBy": {"$oid": "6010e3a7d1f5b32e4c9e6b03"},
+      "createdAt": {"$date": "2024-12-20T09:15:00Z"},
+      "updatedAt": {"$date": "2025-03-08T11:30:00Z"}
+    },
+    {
+      "_id": {"$oid": "6040c6d0e5a9c67d3f2d9e08"},
+      "name": "Halo Infinite - Standard Edition",
+      "sku": "VG-XSX-HI",
+      "description": "Latest installment in the iconic Halo franchise",
+      "price": 59.99,
+      "cost": 36.25,
+      "quantity": 18,
+      "category": {"$oid": "6020f4b8e7f5c43d5a0f7c01"},
+      "subcategory": {"$oid": "6020f4b8e7f5c43d5a0f7c12"},
+      "supplier": {
+        "_id": {"$oid": "6030d5c9f6e7b54f2b1e8d01"},
+        "name": "GameDistro Inc."
+      },
+      "relatedProducts": [
+        {"$oid": "6040c6d0e5a9c67d3f2d9e03"},
+        {"$oid": "6040c6d0e5a9c67d3f2d9e09"}
+      ],
+      "platform": "Xbox Series X",
+      "publisher": "Microsoft Game Studios",
+      "condition": "New",
+      "isDigital": false,
+      "images": [
+        "halo_infinite_standard.jpg",
+        "halo_infinite_gameplay.jpg"
+      ],
+      "tags": ["fps", "sci-fi", "multiplayer", "campaign"],
+      "ratings": {
+        "average": 4.6,
+        "count": 187
+      },
+      "location": {
+        "aisle": "A",
+        "shelf": "1",
+        "bin": "04"
+      },
+      "createdBy": {"$oid": "6010e3a7d1f5b32e4c9e6b04"},
+      "createdAt": {"$date": "2024-12-01T14:30:00Z"},
+      "updatedAt": {"$date": "2025-01-25T10:45:00Z"}
+    },
+    {
+      "_id": {"$oid": "6040c6d0e5a9c67d3f2d9e09"},
+      "name": "Halo Infinite - Digital Deluxe Edition",
+      "sku": "VG-XSX-HIDD",
+      "description": "Digital deluxe edition with season pass and exclusive content",
+      "price": 79.99,
+      "cost": 48.50,
+      "quantity": 0,
+      "category": {"$oid": "6020f4b8e7f5c43d5a0f7c01"},
+      "subcategory": {"$oid": "6020f4b8e7f5c43d5a0f7c12"},
+      "supplier": {
+        "_id": {"$oid": "6030d5c9f6e7b54f2b1e8d01"},
+        "name": "GameDistro Inc."
+      },
+      "relatedProducts": [
+        {"$oid": "6040c6d0e5a9c67d3f2d9e03"},
+        {"$oid": "6040c6d0e5a9c67d3f2d9e08"}
+      ],
+      "platform": "Xbox Series X",
+      "publisher": "Microsoft Game Studios",
+      "condition": "New",
+      "isDigital": true,
+      "includes": [
+        "Digital game download",
+        "Season pass",
+        "Exclusive armor sets",
+        "Digital art book"
+      ],
+      "images": [
+        "halo_infinite_digital_deluxe.jpg"
+      ],
+      "tags": ["fps", "sci-fi", "digital", "season pass"],
+      "ratings": {
+        "average": 4.5,
+        "count": 72
+      },
+      "location": {
+        "aisle": "Digital",
+        "shelf": "N/A",
+        "bin": "N/A"
+      },
+      "createdBy": {"$oid": "6010e3a7d1f5b32e4c9e6b04"},
+      "createdAt": {"$date": "2024-12-02T15:45:00Z"},
+      "updatedAt": {"$date": "2025-02-05T09:20:00Z"}
+    }
+  ]

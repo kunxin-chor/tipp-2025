@@ -1,0 +1,77 @@
+[
+    {
+      "_id": {"$oid": "6010e3a7d1f5b32e4c9e6b01"},
+      "username": "john_manager",
+      "email": "john@comicgamestore.com",
+      "fullName": "John Smith",
+      "role": "manager",
+      "passwordHash": "$2a$10$X7szV9zBl6YpCKJAjT1Mz.wZX9TCnKCKZ5W4B/bYuGJJhN1E3.lDG",
+      "contactInfo": {
+        "phone": "555-123-4567",
+        "address": "123 Main St, Cityville"
+      },
+      "permissions": ["inventory_full", "sales_full", "reports_full", "user_management"],
+      "createdAt": {"$date": "2024-06-15T08:30:00Z"},
+      "lastLogin": {"$date": "2025-03-10T14:22:17Z"}
+    },
+    {
+      "_id": {"$oid": "6010e3a7d1f5b32e4c9e6b02"},
+      "username": "sarah_staff",
+      "email": "sarah@comicgamestore.com",
+      "fullName": "Sarah Johnson",
+      "role": "staff",
+      "passwordHash": "$2a$10$E9LBzZ7vXuP24K5VxDsYNO8HvG3Sj5Y5HQtX9l0LvGQ5Vr5K6L7YW",
+      "contactInfo": {
+        "phone": "555-234-5678",
+        "address": "456 Elm St, Townsburg"
+      },
+      "permissions": ["inventory_read", "sales_create", "reports_read"],
+      "createdAt": {"$date": "2024-07-12T10:15:00Z"},
+      "lastLogin": {"$date": "2025-03-11T09:05:43Z"}
+    },
+    {
+      "_id": {"$oid": "6010e3a7d1f5b32e4c9e6b03"},
+      "username": "mike_staff",
+      "email": "mike@comicgamestore.com",
+      "fullName": "Mike Wilson",
+      "role": "staff",
+      "passwordHash": "$2a$10$ZxG8J6yLd5v9S7xP4UqQXuYvG3sP5W9o9X2KvG5v9S7xP4UqQXu",
+      "contactInfo": {
+        "phone": "555-345-6789",
+        "address": "789 Oak St, Villageton"
+      },
+      "permissions": ["inventory_read", "sales_create", "reports_read"],
+      "createdAt": {"$date": "2024-08-05T14:20:00Z"},
+      "lastLogin": {"$date": "2025-03-10T17:42:31Z"}
+    },
+    {
+      "_id": {"$oid": "6010e3a7d1f5b32e4c9e6b04"},
+      "username": "lisa_manager",
+      "email": "lisa@comicgamestore.com",
+      "fullName": "Lisa Brown",
+      "role": "manager",
+      "passwordHash": "$2a$10$A9vCxZ2Y7tR5v9T6j8yN4uCxZ2Y7tR5v9T6j8yN4uCxZ2Y7tR5v9",
+      "contactInfo": {
+        "phone": "555-456-7890",
+        "address": "101 Pine St, Hamletville"
+      },
+      "permissions": ["inventory_full", "sales_full", "reports_full", "user_management"],
+      "createdAt": {"$date": "2024-09-18T09:45:00Z"},
+      "lastLogin": {"$date": "2025-03-09T11:32:19Z"}
+    },
+    {
+      "_id": {"$oid": "6010e3a7d1f5b32e4c9e6b05"},
+      "username": "alex_staff",
+      "email": "alex@comicgamestore.com",
+      "fullName": "Alex Garcia",
+      "role": "staff",
+      "passwordHash": "$2a$10$R5t8pQ3v2Y7tR5v9T6j8yN4uXvCxZ2Y7tR5v9T6j8yN4u",
+      "contactInfo": {
+        "phone": "555-567-8901",
+        "address": "222 Maple St, Boroughton"
+      },
+      "permissions": ["inventory_read", "sales_create", "reports_read"],
+      "createdAt": {"$date": "2024-10-03T13:50:00Z"},
+      "lastLogin": {"$date": "2025-03-11T08:17:52Z"}
+    }
+  ]

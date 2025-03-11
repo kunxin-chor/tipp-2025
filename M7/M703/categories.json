@@ -1,0 +1,137 @@
+[
+    {
+      "_id": {"$oid": "6020f4b8e7f5c43d5a0f7c01"},
+      "name": "Video Games",
+      "description": "Video games for various consoles and platforms",
+      "subcategories": [
+        {
+          "_id": {"$oid": "6020f4b8e7f5c43d5a0f7c11"},
+          "name": "PlayStation",
+          "description": "Games for PlayStation consoles"
+        },
+        {
+          "_id": {"$oid": "6020f4b8e7f5c43d5a0f7c12"},
+          "name": "Xbox",
+          "description": "Games for Xbox consoles"
+        },
+        {
+          "_id": {"$oid": "6020f4b8e7f5c43d5a0f7c13"},
+          "name": "Nintendo",
+          "description": "Games for Nintendo consoles"
+        },
+        {
+          "_id": {"$oid": "6020f4b8e7f5c43d5a0f7c14"},
+          "name": "PC",
+          "description": "Games for PC platform"
+        }
+      ],
+      "taxRate": 8.25,
+      "displayOrder": 1,
+      "createdAt": {"$date": "2024-01-10T09:00:00Z"},
+      "updatedAt": {"$date": "2024-01-10T09:00:00Z"}
+    },
+    {
+      "_id": {"$oid": "6020f4b8e7f5c43d5a0f7c02"},
+      "name": "Comics",
+      "description": "Comic books and graphic novels",
+      "subcategories": [
+        {
+          "_id": {"$oid": "6020f4b8e7f5c43d5a0f7c21"},
+          "name": "Superhero",
+          "description": "Superhero comic books and graphic novels"
+        },
+        {
+          "_id": {"$oid": "6020f4b8e7f5c43d5a0f7c22"},
+          "name": "Manga",
+          "description": "Japanese comics and graphic novels"
+        },
+        {
+          "_id": {"$oid": "6020f4b8e7f5c43d5a0f7c23"},
+          "name": "Independent",
+          "description": "Independent and alternative comics"
+        }
+      ],
+      "taxRate": 5.5,
+      "displayOrder": 2,
+      "createdAt": {"$date": "2024-01-10T09:15:00Z"},
+      "updatedAt": {"$date": "2024-01-10T09:15:00Z"}
+    },
+    {
+      "_id": {"$oid": "6020f4b8e7f5c43d5a0f7c03"},
+      "name": "Collectibles",
+      "description": "Action figures, statues, and other collectibles",
+      "subcategories": [
+        {
+          "_id": {"$oid": "6020f4b8e7f5c43d5a0f7c31"},
+          "name": "Action Figures",
+          "description": "Collectible action figures"
+        },
+        {
+          "_id": {"$oid": "6020f4b8e7f5c43d5a0f7c32"},
+          "name": "Statues",
+          "description": "Collectible statues and sculptures"
+        },
+        {
+          "_id": {"$oid": "6020f4b8e7f5c43d5a0f7c33"},
+          "name": "Replicas",
+          "description": "Prop replicas and collectible items"
+        }
+      ],
+      "taxRate": 8.25,
+      "displayOrder": 3,
+      "createdAt": {"$date": "2024-01-10T09:30:00Z"},
+      "updatedAt": {"$date": "2024-01-10T09:30:00Z"}
+    },
+    {
+      "_id": {"$oid": "6020f4b8e7f5c43d5a0f7c04"},
+      "name": "Board Games",
+      "description": "Tabletop and board games",
+      "subcategories": [
+        {
+          "_id": {"$oid": "6020f4b8e7f5c43d5a0f7c41"},
+          "name": "Strategy",
+          "description": "Strategy board games"
+        },
+        {
+          "_id": {"$oid": "6020f4b8e7f5c43d5a0f7c42"},
+          "name": "Family",
+          "description": "Family-friendly board games"
+        },
+        {
+          "_id": {"$oid": "6020f4b8e7f5c43d5a0f7c43"},
+          "name": "Card Games",
+          "description": "Card-based games"
+        }
+      ],
+      "taxRate": 8.25,
+      "displayOrder": 4,
+      "createdAt": {"$date": "2024-01-10T09:45:00Z"},
+      "updatedAt": {"$date": "2024-01-10T09:45:00Z"}
+    },
+    {
+      "_id": {"$oid": "6020f4b8e7f5c43d5a0f7c05"},
+      "name": "Gaming Accessories",
+      "description": "Controllers, headsets, and other gaming accessories",
+      "subcategories": [
+        {
+          "_id": {"$oid": "6020f4b8e7f5c43d5a0f7c51"},
+          "name": "Controllers",
+          "description": "Gaming controllers and input devices"
+        },
+        {
+          "_id": {"$oid": "6020f4b8e7f5c43d5a0f7c52"},
+          "name": "Headsets",
+          "description": "Gaming headsets and audio equipment"
+        },
+        {
+          "_id": {"$oid": "6020f4b8e7f5c43d5a0f7c53"},
+          "name": "Storage",
+          "description": "Storage solutions for games and accessories"
+        }
+      ],
+      "taxRate": 8.25,
+      "displayOrder": 5,
+      "createdAt": {"$date": "2024-01-10T10:00:00Z"},
+      "updatedAt": {"$date": "2024-01-10T10:00:00Z"}
+    }
+  ]

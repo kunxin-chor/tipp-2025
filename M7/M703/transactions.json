@@ -1,0 +1,456 @@
+[
+    {
+      "_id": {"$oid": "6050b7e1c4d8a98f1c3f0a01"},
+      "transactionType": "sale",
+      "transactionNumber": "S240301-001",
+      "date": {"$date": "2025-03-01T10:15:23Z"},
+      "customer": {
+        "name": "Alex Thompson",
+        "email": "alex.thompson@example.com",
+        "phone": "555-123-9876",
+        "membershipId": "MEM-45678"
+      },
+      "items": [
+        {
+          "product": {"$oid": "6040c6d0e5a9c67d3f2d9e01"},
+          "name": "The Last Guardian 2",
+          "sku": "VG-PS5-TLG2",
+          "quantity": 1,
+          "price": 69.99,
+          "cost": 42.50,
+          "discount": 0,
+          "subtotal": 69.99
+        },
+        {
+          "product": {"$oid": "6040c6d0e5a9c67d3f2d9e07"},
+          "name": "PlayStation 5 DualSense Controller",
+          "sku": "ACC-PS5-CTRL",
+          "quantity": 1,
+          "price": 69.99,
+          "cost": 45.00,
+          "discount": 0,
+          "subtotal": 69.99
+        }
+      ],
+      "paymentMethod": "credit",
+      "paymentDetails": {
+        "cardType": "Visa",
+        "lastFour": "4321",
+        "transactionId": "PYMT-8756321"
+      },
+      "subtotal": 139.98,
+      "taxRate": 8.25,
+      "taxAmount": 11.55,
+      "total": 151.53,
+      "profit": 64.03,
+      "status": "completed",
+      "notes": "Customer mentioned interest in upcoming PS5 titles",
+      "createdBy": {"$oid": "6010e3a7d1f5b32e4c9e6b02"},
+      "updatedBy": {"$oid": "6010e3a7d1f5b32e4c9e6b02"},
+      "createdAt": {"$date": "2025-03-01T10:15:23Z"},
+      "updatedAt": {"$date": "2025-03-01T10:15:23Z"}
+    },
+    {
+      "_id": {"$oid": "6050b7e1c4d8a98f1c3f0a02"},
+      "transactionType": "sale",
+      "transactionNumber": "S240302-001",
+      "date": {"$date": "2025-03-02T14:30:45Z"},
+      "customer": {
+        "name": "Jennifer Miller",
+        "email": "jennifer.miller@example.com",
+        "phone": "555-456-7890"
+      },
+      "items": [
+        {
+          "product": {"$oid": "6040c6d0e5a9c67d3f2d9e05"},
+          "name": "Settlers of Catan",
+          "sku": "BG-STR-CATAN",
+          "quantity": 1,
+          "price": 44.99,
+          "cost": 27.25,
+          "discount": 0,
+          "subtotal": 44.99
+        }
+      ],
+      "paymentMethod": "cash",
+      "paymentDetails": {
+        "amountTendered": 50.00,
+        "changeGiven": 1.34
+      },
+      "subtotal": 44.99,
+      "taxRate": 8.25,
+      "taxAmount": 3.71,
+      "total": 48.70,
+      "profit": 17.74,
+      "status": "completed",
+      "notes": "",
+      "createdBy": {"$oid": "6010e3a7d1f5b32e4c9e6b03"},
+      "updatedBy": {"$oid": "6010e3a7d1f5b32e4c9e6b03"},
+      "createdAt": {"$date": "2025-03-02T14:30:45Z"},
+      "updatedAt": {"$date": "2025-03-02T14:30:45Z"}
+    },
+    {
+      "_id": {"$oid": "6050b7e1c4d8a98f1c3f0a03"},
+      "transactionType": "sale",
+      "transactionNumber": "S240303-001",
+      "date": {"$date": "2025-03-03T11:20:18Z"},
+      "customer": {
+        "name": "Michael Johnson",
+        "email": "michael.johnson@example.com",
+        "phone": "555-789-1234",
+        "membershipId": "MEM-12345"
+      },
+      "items": [
+        {
+          "product": {"$oid": "6040c6d0e5a9c67d3f2d9e02"},
+          "name": "Batman: Dark Knight Returns - Deluxe Edition",
+          "sku": "COM-DC-TDKR",
+          "quantity": 1,
+          "price": 29.99,
+          "cost": 17.25,
+          "discount": 3.00,
+          "subtotal": 26.99
+        },
+        {
+          "product": {"$oid": "6040c6d0e5a9c67d3f2d9e06"},
+          "name": "Demon Slayer Vol. 1-5 Box Set",
+          "sku": "COM-MNG-DMSLYR",
+          "quantity": 1,
+          "price": 49.99,
+          "cost": 32.50,
+          "discount": 5.00,
+          "subtotal": 44.99
+        }
+      ],
+      "paymentMethod": "credit",
+      "paymentDetails": {
+        "cardType": "Mastercard",
+        "lastFour": "9876",
+        "transactionId": "PYMT-3425678"
+      },
+      "subtotal": 71.98,
+      "taxRate": 5.5,
+      "taxAmount": 3.96,
+      "total": 75.94,
+      "profit": 22.23,
+      "status": "completed",
+      "notes": "Member discount applied. Customer is collecting Batman graphic novels.",
+      "createdBy": {"$oid": "6010e3a7d1f5b32e4c9e6b05"},
+      "updatedBy": {"$oid": "6010e3a7d1f5b32e4c9e6b05"},
+      "createdAt": {"$date": "2025-03-03T11:20:18Z"},
+      "updatedAt": {"$date": "2025-03-03T11:20:18Z"}
+    },
+    {
+      "_id": {"$oid": "6050b7e1c4d8a98f1c3f0a04"},
+      "transactionType": "sale",
+      "transactionNumber": "S240304-001",
+      "date": {"$date": "2025-03-04T09:45:32Z"},
+      "customer": {
+        "name": "David Chen",
+        "email": "david.chen@example.com",
+        "phone": "555-234-5678"
+      },
+      "items": [
+        {
+          "product": {"$oid": "6040c6d0e5a9c67d3f2d9e04"},
+          "name": "Spider-Man Premium Statue",
+          "sku": "COL-SPID-PREM",
+          "quantity": 1,
+          "price": 199.99,
+          "cost": 120.50,
+          "discount": 0,
+          "subtotal": 199.99
+        }
+      ],
+      "paymentMethod": "credit",
+      "paymentDetails": {
+        "cardType": "Amex",
+        "lastFour": "3456",
+        "transactionId": "PYMT-9087654"
+      },
+      "subtotal": 199.99,
+      "taxRate": 8.25,
+      "taxAmount": 16.50,
+      "total": 216.49,
+      "profit": 79.49,
+      "status": "completed",
+      "notes": "Customer requested gift wrapping",
+      "createdBy": {"$oid": "6010e3a7d1f5b32e4c9e6b01"},
+      "updatedBy": {"$oid": "6010e3a7d1f5b32e4c9e6b01"},
+      "createdAt": {"$date": "2025-03-04T09:45:32Z"},
+      "updatedAt": {"$date": "2025-03-04T09:45:32Z"}
+    },
+    {
+      "_id": {"$oid": "6050b7e1c4d8a98f1c3f0a05"},
+      "transactionType": "sale",
+      "transactionNumber": "S240305-001",
+      "date": {"$date": "2025-03-05T15:10:27Z"},
+      "customer": {
+        "name": "Sarah Williams",
+        "email": "sarah.williams@example.com",
+        "phone": "555-567-8901"
+      },
+      "items": [
+        {
+          "product": {"$oid": "6040c6d0e5a9c67d3f2d9e08"},
+          "name": "Halo Infinite - Standard Edition",
+          "sku": "VG-XSX-HI",
+          "quantity": 1,
+          "price": 59.99,
+          "cost": 36.25,
+          "discount": 0,
+          "subtotal": 59.99
+        }
+      ],
+      "paymentMethod": "debit",
+      "paymentDetails": {
+        "cardType": "Visa Debit",
+        "lastFour": "1234",
+        "transactionId": "PYMT-1234567"
+      },
+      "subtotal": 59.99,
+      "taxRate": 8.25,
+      "taxAmount": 4.95,
+      "total": 64.94,
+      "profit": 23.74,
+      "status": "completed",
+      "notes": "",
+      "createdBy": {"$oid": "6010e3a7d1f5b32e4c9e6b03"},
+      "updatedBy": {"$oid": "6010e3a7d1f5b32e4c9e6b03"},
+      "createdAt": {"$date": "2025-03-05T15:10:27Z"},
+      "updatedAt": {"$date": "2025-03-05T15:10:27Z"}
+    },
+    {
+      "_id": {"$oid": "6050b7e1c4d8a98f1c3f0a06"},
+      "transactionType": "sale",
+      "transactionNumber": "S240306-001",
+      "date": {"$date": "2025-03-06T12:35:51Z"},
+      "customer": {
+        "name": "Emily Davis",
+        "email": "emily.davis@example.com",
+        "phone": "555-890-1234",
+        "membershipId": "MEM-67890"
+      },
+      "items": [
+        {
+          "product": {"$oid": "6040c6d0e5a9c67d3f2d9e09"},
+          "name": "Halo Infinite - Digital Deluxe Edition",
+          "sku": "VG-XSX-HIDD",
+          "quantity": 1,
+          "price": 79.99,
+          "cost": 48.50,
+          "discount": 8.00,
+          "subtotal": 71.99
+        }
+      ],
+      "paymentMethod": "credit",
+      "paymentDetails": {
+        "cardType": "Visa",
+        "lastFour": "5678",
+        "transactionId": "PYMT-6543210"
+      },
+      "subtotal": 71.99,
+      "taxRate": 8.25,
+      "taxAmount": 5.94,
+      "total": 77.93,
+      "profit": 23.49,
+      "status": "completed",
+      "notes": "Member discount applied. Digital code sent to customer email.",
+      "createdBy": {"$oid": "6010e3a7d1f5b32e4c9e6b04"},
+      "updatedBy": {"$oid": "6010e3a7d1f5b32e4c9e6b04"},
+      "createdAt": {"$date": "2025-03-06T12:35:51Z"},
+      "updatedAt": {"$date": "2025-03-06T12:35:51Z"}
+    },
+    {
+      "_id": {"$oid": "6050b7e1c4d8a98f1c3f0a07"},
+      "transactionType": "return",
+      "transactionNumber": "R240307-001",
+      "date": {"$date": "2025-03-07T14:22:39Z"},
+      "originalTransaction": {"$oid": "6050b7e1c4d8a98f1c3f0a05"},
+      "customer": {
+        "name": "Sarah Williams",
+        "email": "sarah.williams@example.com",
+        "phone": "555-567-8901"
+      },
+      "items": [
+        {
+          "product": {"$oid": "6040c6d0e5a9c67d3f2d9e08"},
+          "name": "Halo Infinite - Standard Edition",
+          "sku": "VG-XSX-HI",
+          "quantity": 1,
+          "price": 59.99,
+          "cost": 36.25,
+          "discount": 0,
+          "subtotal": 59.99
+        }
+      ],
+      "returnReason": "Incompatible with customer's console",
+      "paymentMethod": "refund",
+      "paymentDetails": {
+        "refundToCard": "Visa Debit",
+        "lastFour": "1234",
+        "transactionId": "RFND-7654321"
+      },
+      "subtotal": -59.99,
+      "taxRate": 8.25,
+      "taxAmount": -4.95,
+      "total": -64.94,
+      "profit": -23.74,
+      "status": "completed",
+      "notes": "Game was unopened. Full refund issued.",
+      "createdBy": {"$oid": "6010e3a7d1f5b32e4c9e6b02"},
+      "updatedBy": {"$oid": "6010e3a7d1f5b32e4c9e6b02"},
+      "createdAt": {"$date": "2025-03-07T14:22:39Z"},
+      "updatedAt": {"$date": "2025-03-07T14:22:39Z"}
+    },
+    {
+      "_id": {"$oid": "6050b7e1c4d8a98f1c3f0a08"},
+      "transactionType": "sale",
+      "transactionNumber": "S240308-001",
+      "date": {"$date": "2025-03-08T16:40:12Z"},
+      "customer": {
+        "name": "James Wilson",
+        "email": "james.wilson@example.com",
+        "phone": "555-345-6789"
+      },
+      "items": [
+        {
+          "product": {"$oid": "6040c6d0e5a9c67d3f2d9e07"},
+          "name": "PlayStation 5 DualSense Controller",
+          "sku": "ACC-PS5-CTRL",
+          "quantity": 2,
+          "price": 69.99,
+          "cost": 45.00,
+          "discount": 0,
+          "subtotal": 139.98
+        }
+      ],
+      "paymentMethod": "cash",
+      "paymentDetails": {
+        "amountTendered": 160.00,
+        "changeGiven": 8.35
+      },
+      "subtotal": 139.98,
+      "taxRate": 8.25,
+      "taxAmount": 11.55,
+      "total": 151.53,
+      "profit": 49.98,
+      "status": "completed",
+      "notes": "Customer buying controllers for multiplayer gaming",
+      "createdBy": {"$oid": "6010e3a7d1f5b32e4c9e6b05"},
+      "updatedBy": {"$oid": "6010e3a7d1f5b32e4c9e6b05"},
+      "createdAt": {"$date": "2025-03-08T16:40:12Z"},
+      "updatedAt": {"$date": "2025-03-08T16:40:12Z"}
+    },
+    {
+      "_id": {"$oid": "6050b7e1c4d8a98f1c3f0a09"},
+      "transactionType": "sale",
+      "transactionNumber": "S240309-001",
+      "date": {"$date": "2025-03-09T10:05:38Z"},
+      "customer": {
+        "name": "Robert Lee",
+        "email": "robert.lee@example.com",
+        "phone": "555-678-9012"
+      },
+      "items": [
+        {
+          "product": {"$oid": "6040c6d0e5a9c67d3f2d9e03"},
+          "name": "Halo Infinite - Collector's Edition",
+          "sku": "VG-XSX-HIC",
+          "quantity": 1,
+          "price": 149.99,
+          "cost": 89.75,
+          "discount": 0,
+          "subtotal": 149.99
+        },
+        {
+          "product": {"$oid": "6040c6d0e5a9c67d3f2d9e05"},
+          "name": "Settlers of Catan",
+          "sku": "BG-STR-CATAN",
+          "quantity": 1,
+          "price": 44.99,
+          "cost": 27.25,
+          "discount": 0,
+          "subtotal": 44.99
+        }
+      ],
+      "paymentMethod": "credit",
+      "paymentDetails": {
+        "cardType": "Mastercard",
+        "lastFour": "4567",
+        "transactionId": "PYMT-2468013"
+      },
+      "subtotal": 194.98,
+      "taxRate": 8.25,
+      "taxAmount": 16.09,
+      "total": 211.07,
+      "profit": 77.98,
+      "status": "completed",
+      "notes": "",
+      "createdBy": {"$oid": "6010e3a7d1f5b32e4c9e6b01"},
+      "updatedBy": {"$oid": "6010e3a7d1f5b32e4c9e6b01"},
+      "createdAt": {"$date": "2025-03-09T10:05:38Z"},
+      "updatedAt": {"$date": "2025-03-09T10:05:38Z"}
+    },
+    {
+      "_id": {"$oid": "6050b7e1c4d8a98f1c3f0a10"},
+      "transactionType": "sale",
+      "transactionNumber": "S240310-001",
+      "date": {"$date": "2025-03-10T13:15:27Z"},
+      "customer": {
+        "name": "Maria Garcia",
+        "email": "maria.garcia@example.com",
+        "phone": "555-901-2345",
+        "membershipId": "MEM-23456"
+      },
+      "items": [
+        {
+          "product": {"$oid": "6040c6d0e5a9c67d3f2d9e01"},
+          "name": "The Last Guardian 2",
+          "sku": "VG-PS5-TLG2",
+          "quantity": 1,
+          "price": 69.99,
+          "cost": 42.50,
+          "discount": 7.00,
+          "subtotal": 62.99
+        },
+        {
+          "product": {"$oid": "6040c6d0e5a9c67d3f2d9e06"},
+          "name": "Demon Slayer Vol. 1-5 Box Set",
+          "sku": "COM-MNG-DMSLYR",
+          "quantity": 1,
+          "price": 49.99,
+          "cost": 32.50,
+          "discount": 5.00,
+          "subtotal": 44.99
+        },
+        {
+          "product": {"$oid": "6040c6d0e5a9c67d3f2d9e02"},
+          "name": "Batman: Dark Knight Returns - Deluxe Edition",
+          "sku": "COM-DC-TDKR",
+          "quantity": 1,
+          "price": 29.99,
+          "cost": 17.25,
+          "discount": 3.00,
+          "subtotal": 26.99
+        }
+      ],
+      "paymentMethod": "credit",
+      "paymentDetails": {
+        "cardType": "Discover",
+        "lastFour": "8901",
+        "transactionId": "PYMT-1357924"
+      },
+      "subtotal": 134.97,
+      "taxRate": 7.50,
+      "taxAmount": 10.12,
+      "total": 145.09,
+      "profit": 42.72,
+      "status": "completed",
+      "notes": "Member discount applied. Customer is collecting both manga and graphic novels.",
+      "createdBy": {"$oid": "6010e3a7d1f5b32e4c9e6b04"},
+      "updatedBy": {"$oid": "6010e3a7d1f5b32e4c9e6b04"},
+      "createdAt": {"$date": "2025-03-10T13:15:27Z"},
+      "updatedAt": {"$date": "2025-03-10T13:15:27Z"}
+    }
+  ]

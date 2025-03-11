@@ -1,0 +1,135 @@
+[
+    {
+      "_id": {"$oid": "6030d5c9f6e7b54f2b1e8d01"},
+      "name": "GameDistro Inc.",
+      "contactPerson": "Robert Chen",
+      "email": "sales@gamedistro.com",
+      "phone": "1-800-555-1234",
+      "address": {
+        "street": "123 Distribution Way",
+        "city": "Los Angeles",
+        "state": "CA",
+        "zipCode": "90001",
+        "country": "USA"
+      },
+      "paymentTerms": "Net 30",
+      "productCategories": [
+        {"$oid": "6020f4b8e7f5c43d5a0f7c01"},
+        {"$oid": "6020f4b8e7f5c43d5a0f7c05"}
+      ],
+      "active": true,
+      "notes": "Primary supplier for video games and accessories",
+      "createdAt": {"$date": "2024-01-15T11:30:00Z"},
+      "updatedAt": {"$date": "2024-01-15T11:30:00Z"}
+    },
+    {
+      "_id": {"$oid": "6030d5c9f6e7b54f2b1e8d02"},
+      "name": "Comic Warehouse Ltd.",
+      "contactPerson": "Maria Garcia",
+      "email": "orders@comicwarehouse.com",
+      "phone": "1-888-555-2345",
+      "address": {
+        "street": "456 Comic Blvd",
+        "city": "New York",
+        "state": "NY",
+        "zipCode": "10001",
+        "country": "USA"
+      },
+      "paymentTerms": "Net 45",
+      "productCategories": [
+        {"$oid": "6020f4b8e7f5c43d5a0f7c02"}
+      ],
+      "active": true,
+      "notes": "Exclusive distributor for several comic publishers",
+      "createdAt": {"$date": "2024-01-16T09:45:00Z"},
+      "updatedAt": {"$date": "2024-01-16T09:45:00Z"}
+    },
+    {
+      "_id": {"$oid": "6030d5c9f6e7b54f2b1e8d03"},
+      "name": "Collectibles Direct",
+      "contactPerson": "David Wong",
+      "email": "wholesale@collectiblesdirect.com",
+      "phone": "1-877-555-3456",
+      "address": {
+        "street": "789 Collectible Lane",
+        "city": "Chicago",
+        "state": "IL",
+        "zipCode": "60007",
+        "country": "USA"
+      },
+      "paymentTerms": "Net 30",
+      "productCategories": [
+        {"$oid": "6020f4b8e7f5c43d5a0f7c03"}
+      ],
+      "active": true,
+      "notes": "Best pricing on limited edition collectibles",
+      "createdAt": {"$date": "2024-01-17T14:20:00Z"},
+      "updatedAt": {"$date": "2024-01-17T14:20:00Z"}
+    },
+    {
+      "_id": {"$oid": "6030d5c9f6e7b54f2b1e8d04"},
+      "name": "Tabletop Games Supply",
+      "contactPerson": "Sarah Johnson",
+      "email": "orders@tabletopgamessupply.com",
+      "phone": "1-866-555-4567",
+      "address": {
+        "street": "101 Board Game Road",
+        "city": "Austin",
+        "state": "TX",
+        "zipCode": "78701",
+        "country": "USA"
+      },
+      "paymentTerms": "Net 15",
+      "productCategories": [
+        {"$oid": "6020f4b8e7f5c43d5a0f7c04"}
+      ],
+      "active": true,
+      "notes": "Reliable source for board games with fast shipping",
+      "createdAt": {"$date": "2024-01-18T10:15:00Z"},
+      "updatedAt": {"$date": "2024-01-18T10:15:00Z"}
+    },
+    {
+      "_id": {"$oid": "6030d5c9f6e7b54f2b1e8d05"},
+      "name": "Manga Importers Co.",
+      "contactPerson": "Yuki Tanaka",
+      "email": "contact@mangaimporters.com",
+      "phone": "1-855-555-5678",
+      "address": {
+        "street": "222 Manga Street",
+        "city": "Seattle",
+        "state": "WA",
+        "zipCode": "98101",
+        "country": "USA"
+      },
+      "paymentTerms": "Net 60",
+      "productCategories": [
+        {"$oid": "6020f4b8e7f5c43d5a0f7c02"}
+      ],
+      "active": true,
+      "notes": "Specializes in imported manga and anime products",
+      "createdAt": {"$date": "2024-01-19T15:30:00Z"},
+      "updatedAt": {"$date": "2024-01-19T15:30:00Z"}
+    },
+    {
+      "_id": {"$oid": "6030d5c9f6e7b54f2b1e8d06"},
+      "name": "Retro Game Distributors",
+      "contactPerson": "James Wilson",
+      "email": "sales@retrogamedistributors.com",
+      "phone": "1-844-555-6789",
+      "address": {
+        "street": "333 Vintage Avenue",
+        "city": "Portland",
+        "state": "OR",
+        "zipCode": "97205",
+        "country": "USA"
+      },
+      "paymentTerms": "Net 30",
+      "productCategories": [
+        {"$oid": "6020f4b8e7f5c43d5a0f7c01"}
+      ],
+      "active": true,
+      "notes": "Specializes in retro and vintage video games",
+      "createdAt": {"$date": "2024-01-20T13:45:00Z"},
+      "updatedAt": {"$date": "2024-01-20T13:45:00Z"}
+    }
+  ]
