@@ -1,0 +1,260 @@
+
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f2f5;
+    color: #333;
+}
+
+.container {
+    display: flex;
+    max-width: 1200px;
+    margin: 20px auto;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: white;
+}
+
+h1, h2, h3 {
+    margin: 0;
+    padding: 10px 0;
+    color: #2c3e50;
+}
+
+/* Floorplan Styles */
+.floorplan {
+    flex: 1;
+    padding: 20px;
+    background-color: #ecf0f1;
+    border-right: 1px solid #ddd;
+    position: relative;
+}
+
+.house {
+    position: relative;
+    width: 100%;
+    height: 550px;
+    border: 2px solid #34495e;
+    background-color: #fff;
+}
+
+.room {
+    position: absolute;
+    border: 2px solid #34495e;
+    background-color: #f9f9f9;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    padding: 5px;
+}
+
+.room-name {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    font-weight: bold;
+    font-size: 0.9em;
+    color: #7f8c8d;
+}
+
+.bedroom {
+    top: 20px;
+    left: 20px;
+    width: 45%;
+    height: 45%;
+}
+
+.living-room {
+    top: 20px;
+    right: 20px;
+    width: 45%;
+    height: 45%;
+}
+
+.kitchen {
+    bottom: 20px;
+    right: 20px;
+    width: 45%;
+    height: 45%;
+}
+
+.bathroom {
+    bottom: 20px;
+    left: 20px;
+    width: 45%;
+    height: 45%;
+}
+
+.storeroom {
+    position: absolute;
+    width: 30%;
+    height: 30%;
+    right: 10px;
+    bottom: 10px;
+    border: 1px dashed #95a5a6;
+    background-color: #ecf0f1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Device Styles */
+.device {
+    width: 36px;
+    height: 36px;
+    margin: 5px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.device-icon {
+    width: 24px;
+    height: 24px;
+    transition: opacity 0.3s, filter 0.3s;
+}
+
+.device-name {
+    position: absolute;
+    bottom: -15px;
+    font-size: 0.7em;
+    white-space: nowrap;
+}
+
+/* Device States */
+.device.on .device-icon {
+    opacity: 1;
+    filter: drop-shadow(0 0 3px rgba(76, 175, 80, 0.7));
+}
+
+.device.off .device-icon {
+    opacity: 0.4;
+    filter: grayscale(100%);
+}
+
+/* Light device specific */
+.light.on .device-icon {
+    filter: drop-shadow(0 0 5px rgba(255, 235, 59, 0.9));
+}
+
+/* Control Panel Styles */
+.control-panel {
+    flex: 1;
+    padding: 20px;
+    background-color: #fff;
+    overflow-y: auto;
+}
+
+/* Helper class for selector demonstration */
+.control-panel-help {
+    background-color: #f9f9f9;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    border-left: 4px solid #2196F3;
+}
+
+.selector-example {
+    font-family: monospace;
+    background-color: #f0f0f0;
+    padding: 8px;
+    margin: 5px 0;
+    border-radius: 4px;
+}
+
+.selector-description {
+    margin-top: 5px;
+    font-size: 0.9em;
+    color: #666;
+}
+
+.panel-section {
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    border-left: 4px solid #3498db;
+}
+
+.device-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.control-card {
+    flex: 1;
+    min-width: 200px;
+    padding: 12px;
+    background-color: white;
+    border-radius: 6px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.card-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+}
+
+.device-status {
+    display: inline-block;
+    padding: 3px 8px;
+    border-radius: 10px;
+    font-size: 0.8em;
+    font-weight: bold;
+    margin-left: auto;
+}
+
+.status-on {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+}
+
+.status-off {
+    background-color: #eeeeee;
+    color: #757575;
+}
+
+.control-button {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    background-color: #3498db;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    opacity: 0.9;
+    transition: opacity 0.3s;
+    margin-top: 10px;
+}
+
+.control-button:hover {
+    opacity: 1;
+}
+
+.control-button.off {
+    background-color: #e74c3c;
+}
+
+/* Sensor specific indicators */
+.sensor-value {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2c3e50;
+    margin: 5px 0;
+}

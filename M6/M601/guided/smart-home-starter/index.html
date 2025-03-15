@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Home System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Floorplan Section -->
+        <div class="floorplan">
+            <h2>Smart Home Floorplan</h2>
+            <div class="house">
+                <!-- Bedroom -->
+                <div id="bedroom" class="room bedroom">
+                    <div class="room-name">Bedroom</div>
+                    
+                    <div id="bedroom-light" class="device light on smart-light">
+                        <svg class="device-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2C8.13 2 5 5.13 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.87-3.13-7-7-7z" fill="#FFD54F"/>
+                            <path d="M9 21v-1h6v1c0 .55-.45 1-1 1h-4c-.55 0-1-.45-1-1z" fill="#FFD54F"/>
+                        </svg>
+                        <span class="device-name">Light</span>
+                    </div>
+                    
+                    <div class="device motion-sensor on sensor-device">
+                        <svg class="device-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M20 9c0-1.9-1.3-3.5-3-4V4c0-.6-.4-1-1-1s-1 .4-1 1v1h-2.5V4c0-.6-.4-1-1-1s-1 .4-1 1v1H8V4c0-.6-.4-1-1-1s-1 .4-1 1v1c-1.7.5-3 2.1-3 4v9c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V9zm-3.5 6c0 .3-.2.5-.5.5s-.5-.2-.5-.5v-1.5h-1V15c0 .3-.2.5-.5.5s-.5-.2-.5-.5v-1.5h-1V15c0 .3-.2.5-.5.5s-.5-.2-.5-.5v-1.5h-1V15c0 .3-.2.5-.5.5s-.5-.2-.5-.5v-1.5h-1V15c0 .3-.2.5-.5.5s-.5-.2-.5-.5v-1.5H7c-.6 0-1-.4-1-1V9.4l2.5 3.2c.3.4.9.5 1.3.1l4.2-3.4 2.9 2.7c.2.2.5.2.7 0l1.4-1.4V15z" fill="#4CAF50"/>
+                        </svg>
+                        <span class="device-name">Motion</span>
+                    </div>
+                    
+                    <div class="device ac on climate-control">
+                        <svg class="device-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="2" y="5" width="20" height="14" rx="2" fill="#81D4FA"/>
+                            <path d="M22 9H2v4h20V9z" fill="#4FC3F7"/>
+                            <circle cx="18" cy="7" r="1" fill="#0288D1"/>
+                            <circle cx="15" cy="7" r="1" fill="#0288D1"/>
+                        </svg>
+                        <span class="device-name">A/C</span>
+                    </div>
+                </div>
+                
+                <!-- Living Room -->
+                <div id="living-room" class="room living-room">
+                    <div class="room-name">Living Room</div>
+                    
+                    <div class="device light on smart-light">
+                        <svg class="device-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2C8.13 2 5 5.13 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.87-3.13-7-7-7z" fill="#FFD54F"/>
+                            <path d="M9 21v-1h6v1c0 .55-.45 1-1 1h-4c-.55 0-1-.45-1-1z" fill="#FFD54F"/>
+                        </svg>
+                        <span class="device-name">Light</span>
+                    </div>
+                    
+                    <div id="main-tv" class="device tv on entertainment">
+                        <svg class="device-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="3" y="5" width="18" height="13" rx="2" fill="#263238"/>
+                            <rect x="5" y="7" width="14" height="9" fill="#4FC3F7"/>
+                            <path d="M9 18h6v3H9z" fill="#546E7A"/>
+                        </svg>
+                        <span class="device-name">TV</span>
+                    </div>
+                    
+                    <div class="device light-sensor on sensor-device">
+                        <svg class="device-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="12" cy="12" r="8" fill="#FFEB3B"/>
+                            <path d="M12 4.5V2m0 20v-2.5m7.5-7.5H22m-20 0h2.5m13.6-5.7l1.8-1.8M4.1 19.9l1.8-1.8m0-12.7L4.1 4.1m15.8 15.8l-1.8-1.8" stroke="#FF9800" stroke-width="2" stroke-linecap="round"/>
+                            <circle cx="12" cy="12" r="3" fill="#FFC107"/>
+                        </svg>
+                        <span class="device-name">Light Sensor</span>
+                    </div>
+                    
+                    <!-- Storeroom inside Living Room -->
+                    <div id="storage" class="storeroom">
+                        <div class="room-name">Store</div>
+                        <div class="device light off smart-light">
+                            <svg class="device-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2C8.13 2 5 5.13 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.87-3.13-7-7-7z" fill="#FFD54F"/>
+                                <path d="M9 21v-1h6v1c0 .55-.45 1-1 1h-4c-.55 0-1-.45-1-1z" fill="#FFD54F"/>
+                            </svg>
+                            <span class="device-name">Light</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Kitchen -->
+                <div class="room kitchen">
+                    <div class="room-name">Kitchen</div>
+                    
+                    <div class="device light off smart-light">
+                        <svg class="device-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2C8.13 2 5 5.13 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.87-3.13-7-7-7z" fill="#FFD54F"/>
+                            <path d="M9 21v-1h6v1c0 .55-.45 1-1 1h-4c-.55 0-1-.45-1-1z" fill="#FFD54F"/>
+                        </svg>
+                        <span class="device-name">Light</span>
+                    </div>
+                    
+                    <div class="device refrigerator on appliance">
+                        <svg class="device-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="5" y="2" width="14" height="20" rx="1" fill="#ECEFF1"/>
+                            <path d="M5 10h14v1H5z" fill="#B0BEC5"/>
+                            <rect x="17" y="6" width="1" height="2" rx="0.5" fill="#B0BEC5"/>
+                            <rect x="17" y="14" width="1" height="2" rx="0.5" fill="#B0BEC5"/>
+                        </svg>
+                        <span class="device-name">Fridge</span>
+                    </div>
+                    
+                    <div class="device motion-sensor off sensor-device">
+                        <svg class="device-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M20 9c0-1.9-1.3-3.5-3-4V4c0-.6-.4-1-1-1s-1 .4-1 1v1h-2.5V4c0-.6-.4-1-1-1s-1 .4-1 1v1H8V4c0-.6-.4-1-1-1s-1 .4-1 1v1c-1.7.5-3 2.1-3 4v9c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V9zm-3.5 6c0 .3-.2.5-.5.5s-.5-.2-.5-.5v-1.5h-1V15c0 .3-.2.5-.5.5s-.5-.2-.5-.5v-1.5h-1V15c0 .3-.2.5-.5.5s-.5-.2-.5-.5v-1.5h-1V15c0 .3-.2.5-.5.5s-.5-.2-.5-.5v-1.5h-1V15c0 .3-.2.5-.5.5s-.5-.2-.5-.5v-1.5H7c-.6 0-1-.4-1-1V9.4l2.5 3.2c.3.4.9.5 1.3.1l4.2-3.4 2.9 2.7c.2.2.5.2.7 0l1.4-1.4V15z" fill="#4CAF50"/>
+                        </svg>
+                        <span class="device-name">Motion</span>
+                    </div>
+                    
+                    <div id="washer" class="device washing-machine off appliance">
+                        <svg class="device-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="3" y="4" width="18" height="16" rx="2" fill="#ECEFF1"/>
+                            <circle cx="12" cy="13" r="5" stroke="#B0BEC5" stroke-width="2" fill="none"/>
+                            <circle cx="12" cy="13" r="2" fill="#B0BEC5"/>
+                            <rect x="5" y="6" width="14" height="2" rx="1" fill="#CFD8DC"/>
+                        </svg>
+                        <span class="device-name">Washer</span>
+                    </div>
+                </div>
+                
+                <!-- Bathroom -->
+                <div class="room bathroom">
+                    <div class="room-name">Bathroom</div>
+                    
+                    <div class="device light on">
+                        <svg class="device-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2C8.13 2 5 5.13 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.87-3.13-7-7-7z" fill="#FFD54F"/>
+                            <path d="M9 21v-1h6v1c0 .55-.45 1-1 1h-4c-.55 0-1-.45-1-1z" fill="#FFD54F"/>
+                        </svg>
+                        <span class="device-name">Light</span>
+                    </div>
+                    
+
+                    
+                    <div class="device heater off">
+                        <svg class="device-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="3" y="6" width="18" height="12" rx="1" fill="#E0E0E0"/>
+                            <path d="M5 9h14v6H5z" fill="#BDBDBD"/>
+                            <path d="M7 10v4M10 10v4M13 10v4M16 10v4" stroke="#F44336" stroke-width="1"/>
+                        </svg>
+                        <span class="device-name">Heater</span>
+                    </div>
+                    
+
+                </div>
+            </div>
+        </div>
+        
+        <!-- Control Panel Section -->
+        <div class="control-panel">
+            <h2>Smart Home Control Panel</h2>
+            
+            <!-- Lights Control Section -->
+            <div class="panel-section">
+                <h3>Lighting Controls</h3>
+                <div class="device-controls">
+                    <div class="control-card">
+                        <div class="card-header">
+                            <svg class="card-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2C8.13 2 5 5.13 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.87-3.13-7-7-7z" fill="#FFD54F"/>
+                                <path d="M9 21v-1h6v1c0 .55-.45 1-1 1h-4c-.55 0-1-.45-1-1z" fill="#FFD54F"/>
+                            </svg>
+                            <span>Bedroom Light</span>
+                            <span class="device-status status-on">ON</span>
+                        </div>
+                        <button class="control-button off">Turn Off</button>
+                    </div>
+                    
+                    <div class="control-card">
+                        <div class="card-header">
+                            <svg class="card-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2C8.13 2 5 5.13 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.87-3.13-7-7-7z" fill="#FFD54F"/>
+                                <path d="M9 21v-1h6v1c0 .55-.45 1-1 1h-4c-.55 0-1-.45-1-1z" fill="#FFD54F"/>
+                            </svg>
+                            <span>Living Room Light</span>
+                            <span class="device-status status-on">ON</span>
+                        </div>
+                        <button class="control-button off">Turn Off</button>
+                    </div>
+                    
+                    <div class="control-card">
+                        <div class="card-header">
+                            <svg class="card-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2C8.13 2 5 5.13 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.87-3.13-7-7-7z" fill="#FFD54F"/>
+                                <path d="M9 21v-1h6v1c0 .55-.45 1-1 1h-4c-.55 0-1-.45-1-1z" fill="#FFD54F"/>
+                            </svg>
+                            <span>Kitchen Light</span>
+                            <span class="device-status status-off">OFF</span>
+                        </div>
+                        <button class="control-button">Turn On</button>
+                    </div>
+                    
+                    <div class="control-card">
+                        <div class="card-header">
+                            <svg class="card-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2C8.13 2 5 5.13 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.87-3.13-7-7-7z" fill="#FFD54F"/>
+                                <path d="M9 21v-1h6v1c0 .55-.45 1-1 1h-4c-.55 0-1-.45-1-1z" fill="#FFD54F"/>
+                            </svg>
+                            <span>Bathroom Light</span>
+                            <span class="device-status status-on">ON</span>
+                        </div>
+                        <button class="control-button off">Turn Off</button>
+                    </div>
+                    
+                    <div class="control-card">
+                        <div class="card-header">
+                            <svg class="card-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2C8.13 2 5 5.13 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.87-3.13-7-7-7z" fill="#FFD54F"/>
+                                <path d="M9 21v-1h6v1c0 .55-.45 1-1 1h-4c-.55 0-1-.45-1-1z" fill="#FFD54F"/>
+                            </svg>
+                            <span>Storeroom Light</span>
+                            <span class="device-status status-off">OFF</span>
+                        </div>
+                        <button class="control-button">Turn On</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Appliances Control Section -->
+            <div class="panel-section">
+                <h3>Appliance Controls</h3>
+                <div class="device-controls">
+                    <div class="control-card">
+                        <div class="card-header">
+                            <svg class="card-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="3" y="5" width="18" height="13" rx="2" fill="#263238"/>
+                                <rect x="5" y="7" width="14" height="9" fill="#4FC3F7"/>
+                                <path d="M9 18h6v3H9z" fill="#546E7A"/>
+                            </svg>
+                            <span>Living Room TV</span>
+                            <span class="device-status status-on">ON</span>
+                        </div>
+                        <button class="control-button off">Turn Off</button>
+                    </div>
+                    
+                    <div class="control-card">
+                        <div class="card-header">
+                            <svg class="card-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="3" y="4" width="18" height="16" rx="2" fill="#ECEFF1"/>
+                                <circle cx="12" cy="13" r="5" stroke="#B0BEC5" stroke-width="2" fill="none"/>
+                                <circle cx="12" cy="13" r="2" fill="#B0BEC5"/>
+                                <rect x="5" y="6" width="14" height="2" rx="1" fill="#CFD8DC"/>
+                            </svg>
+                            <span>Kitchen Washing Machine</span>
+                            <span class="device-status status-off">OFF</span>
+                        </div>
+                        <button class="control-button">Turn On</button>
+                    </div>
