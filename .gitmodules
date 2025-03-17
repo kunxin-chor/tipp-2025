@@ -1,0 +1,6 @@
+[submodule "M6/M601/guided/m6-smart-home-starter"]
+	path = M6/M601/guided/m6-smart-home-starter
+	url = https://github.com/kunxin-chor/m6-smart-home-starter/
+[submodule "M6/M601/hands-on/vending-machine"]
+	path = M6/M601/hands-on/vending-machine
+	url = https://github.com/kunxin-chor/m6-1-vending-machine
