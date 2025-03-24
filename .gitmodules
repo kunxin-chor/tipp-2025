@@ -4,3 +4,6 @@
 [submodule "M6/M601/hands-on/vending-machine"]
 	path = M6/M601/hands-on/vending-machine
 	url = https://github.com/kunxin-chor/m6-1-vending-machine
+[submodule "M6/M601/hands-on/card-game"]
+	path = M6/M601/hands-on/card-game
+	url = https://github.com/kunxin-chor/m06-card-game
