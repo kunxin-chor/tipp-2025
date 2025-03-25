@@ -7,3 +7,9 @@
 [submodule "M6/M601/hands-on/card-game"]
 	path = M6/M601/hands-on/card-game
 	url = https://github.com/kunxin-chor/m06-card-game
+[submodule "M6/M602/hands-on/booking-starter"]
+	path = M6/M602/hands-on/booking-starter
+	url = https://github.com/kunxin-chor/restaurant-booking-hands-on.git
+[submodule "M6/M602/guided-instruction/cinema-booking"]
+	path = M6/M602/guided-instruction/cinema-booking
+	url = https://github.com/kunxin-chor/cinema-booking.git
