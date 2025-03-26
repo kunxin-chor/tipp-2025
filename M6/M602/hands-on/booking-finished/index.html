@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Golden Dragon - Food Delivery</title>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="restaurant-logo">🥢</div>
+            <h1>Golden Dragon</h1>
+            <p>Authentic Chinese cuisine delivered to your doorstep</p>
+        </header>
+
+        <div id="order-summary" class="order-summary">
+            <h2>Order Summary</h2>
+            <ul>
+                <li>Name:<span id="order-summary-name"></span></li>
+                <li>Email:<span id="order-summary-email"></span></li>
+                <li>Address:<span id="order-summary-address"></span></li>
+                <li>Order items:<span id="order-summary-order-items"></span></li>
+                <li>Delivery time:<span id="order-summary-time"></span></li>
+                <li>Utensils:<span id="order-utensils"></span></li>
+                <li>Restaurant branch:<span id="order-branch"></span></li>
+            </ul>
+        </div>
+        
+        <form id="delivery-form" class="order-form">
+            <!-- Customer Information Section -->
+            <div class="form-section">
+                <h2 class="form-section-title">
+                    Customer Information
+                </h2>
+                
+                <div class="form-group">
+                    <label for="name" class="required">Full Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="address" class="required">Delivery Address</label>
+                    <input type="text" id="address" name="address" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email" class="required">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+            </div>
+            
+            <!-- Restaurant Selection Section -->
+            <div class="form-section">
+                <h2 class="form-section-title">
+                    Restaurant Location
+                </h2>
+                
+                <div class="form-group">
+                    <label for="restaurant">Select Restaurant Branch</label>
+                    <select id="restaurant" name="restaurant">
+                        <option value="chinatown">Chinatown</option>
+                        <option value="downtown">Downtown</option>
+                        <option value="eastside">East Side</option>
+                        <option value="northside">North Side</option>
+                    </select>
+                </div>
+            </div>
+            
+            <!-- Delivery Options Section -->
+            <div class="form-section">
+                <h2 class="form-section-title">
+                    Delivery Options
+                </h2>
+                
+                <div class="form-group">
+                    <label>Preferred Delivery Time</label>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" id="time-asap" name="deliveryTime" value="asap" checked>
+                            As soon as possible
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" id="time-30min" name="deliveryTime" value="30min">
+                            Within 30 minutes
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" id="time-1hour" name="deliveryTime" value="1hour">
+                            Within 1 hour
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" id="time-later" name="deliveryTime" value="later">
+                            Schedule for later
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label>Utensils</label>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" id="utensils-yes" name="utensils" value="yes">
+                            Yes, please include chopsticks and utensils
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" id="utensils-no" name="utensils" value="no" checked>
+                            No, I don't need utensils
+                        </label>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Menu Items Section -->
+            <div class="form-section">
+                <h2 class="form-section-title">
+                    Menu Items
+                </h2>
+                
+                <p>Select items to add to your order:</p>
+                
+                <div class="menu-items">
+                    <!-- Appetizer 1 -->
+                    <div class="menu-item">
+                        <div class="menu-item-image">Spring Rolls</div>
+                        <div class="menu-item-details">
+                            <div class="menu-item-title">Spring Rolls</div>
+                            <div class="menu-item-price">$5.99</div>
+                            <div class="menu-item-description">Crispy vegetable spring rolls served with sweet chili sauce</div>
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="menuItems" class="menu-checkbox" value="spring-rolls">
+                                Add to order
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <!-- Main 1 -->
+                    <div class="menu-item">
+                        <div class="menu-item-image">Kung Pao Chicken</div>
+                        <div class="menu-item-details">
+                            <div class="menu-item-title">Kung Pao Chicken</div>
+                            <div class="menu-item-price">$13.99</div>
+                            <div class="menu-item-description">Spicy stir-fried chicken with peanuts, vegetables, and chili peppers</div>
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="menuItems" class="menu-checkbox" value="kung-pao-chicken">
+                                Add to order
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <!-- Main 2 -->
+                    <div class="menu-item">
+                        <div class="menu-item-image">Beef with Broccoli</div>
+                        <div class="menu-item-details">
+                            <div class="menu-item-title">Beef with Broccoli</div>
+                            <div class="menu-item-price">$14.99</div>
+                            <div class="menu-item-description">Tender beef slices and broccoli in a savory brown sauce</div>
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="menuItems" class="menu-checkbox" value="beef-broccoli">
+                                Add to order
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <!-- Noodles -->
+                    <div class="menu-item">
+                        <div class="menu-item-image">Vegetable Lo Mein</div>
+                        <div class="menu-item-details">
+                            <div class="menu-item-title">Vegetable Lo Mein</div>
+                            <div class="menu-item-price">$11.99</div>
+                            <div class="menu-item-description">Stir-fried noodles with mixed vegetables in savory sauce</div>
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="menuItems" class="menu-checkbox" value="vegetable-lo-mein">
+                                Add to order
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <!-- Rice -->
+                    <div class="menu-item">
+                        <div class="menu-item-image">House Special Fried Rice</div>
+                        <div class="menu-item-details">
+                            <div class="menu-item-title">House Special Fried Rice</div>
+                            <div class="menu-item-price">$12.99</div>
+                            <div class="menu-item-description">Fried rice with shrimp, chicken, beef, and vegetables</div>
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="menuItems" class="menu-checkbox" value="special-fried-rice">
+                                Add to order
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <!-- Soup -->
+                    <div class="menu-item">
+                        <div class="menu-item-image">Hot and Sour Soup</div>
+                        <div class="menu-item-details">
+                            <div class="menu-item-title">Hot and Sour Soup</div>
+                            <div class="menu-item-price">$6.99</div>
+                            <div class="menu-item-description">Spicy and tangy soup with tofu, mushroom, and bamboo shoots</div>
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="menuItems" class="menu-checkbox" value="hot-sour-soup">
+                                Add to order
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <!-- Dessert -->
+                    <div class="menu-item">
+                        <div class="menu-item-image">Mango Pudding</div>
+                        <div class="menu-item-details">
+                            <div class="menu-item-title">Mango Pudding</div>
+                            <div class="menu-item-price">$5.99</div>
+                            <div class="menu-item-description">Sweet mango-flavored pudding topped with fresh fruit</div>
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="menuItems" class="menu-checkbox" value="mango-pudding">
+                                Add to order
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <!-- Drink -->
+                    <div class="menu-item">
+                        <div class="menu-item-image">Bubble Tea</div>
+                        <div class="menu-item-details">
+                            <div class="menu-item-title">Bubble Tea</div>
+                            <div class="menu-item-price">$4.99</div>
+                            <div class="menu-item-description">Milk tea with tapioca pearls, various flavors available</div>
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="menuItems" class="menu-checkbox" value="bubble-tea">
+                                Add to order
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <button type="submit" class="submit-btn">Place Order</button>
+        </form>
+    </div>
+</body>
+</html>

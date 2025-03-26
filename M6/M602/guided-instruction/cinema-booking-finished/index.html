@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxury Cinema Booking</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Luxury Cinema Booking</h1>
+            <p>Experience movies in ultimate comfort</p>
+        </header>
+        
+        <form id="booking-form" class="booking-form">
+            <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" required>
+                <div class="error" id="error-name"></div>
+            </div>
+            
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" required>
+                <div class="error" id="error-email"></div>
+            </div>
+            
+            <div class="form-group">
+                <label for="movie">Select Movie</label>
+                <select id="movie" name="movie" required>
+                    <option value="">-- Select a movie --</option>
+                    <option value="movie1">Interstellar: Director's Cut</option>
+                    <option value="movie2">The French Dispatch</option>
+                    <option value="movie3">Dune: Part Two</option>
+                    <option value="movie4">The Batman</option>
+                    <option value="movie5">Everything Everywhere All at Once</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label>Payment Method</label>
+                <div class="payment-options">
+                    <div class="payment-option">
+                        <input type="radio" id="cc" name="payment" value="cc">
+                        <label for="cc">Credit Card</label>
+                    </div>
+                    <div class="payment-option">
+                        <input type="radio" id="cash" name="payment" value="cash">
+                        <label for="cash">Cash</label>
+                    </div>
+                    <div class="payment-option">
+                        <input type="radio" id="paynow" name="payment" value="paynow">
+                        <label for="paynow">PayNow QR</label>
+                    </div>
+                </div>
+                <div class="error" id="error-payment"></div>
+            </div>
+            
+            <div class="seat-selection">
+                <h2>Seat Selection</h2>
+                
+                <div class="legend">
+                    <div class="legend-item">
+                        <div class="legend-box available"></div>
+                        <span>Available</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-box selected"></div>
+                        <span>Selected</span>
+                    </div>
+                </div>
+                
+                <p class="screen-label">SCREEN</p>
+                <div class="screen"></div>
+                
+                <div class="seating-layout">
+                    <!-- Row A -->
+                    <div class="row">
+                        <div class="row-label">A</div>
+                        <div class="seat">
+                            <input type="checkbox" id="A1" name="seats" class="seat-checkbox" value="A1">
+                            <label for="A1">1</label>
+                        </div>
+                        <div class="seat">
+                            <input type="checkbox" id="A2" name="seats" class="seat-checkbox" value="A2">
+                            <label for="A2">2</label>
+                        </div>
+                        <div class="seat">
+                            <input type="checkbox" id="A3" name="seats" class="seat-checkbox" value="A3">
+                            <label for="A3">3</label>
+                        </div>
+                        <div class="seat">
+                            <input type="checkbox" id="A4" name="seats" class="seat-checkbox" value="A4">
+                            <label for="A4">4</label>
+                        </div>
+                        <div class="seat">
+                            <input type="checkbox" id="A5" name="seats" class="seat-checkbox" value="A5">
+                            <label for="A5">5</label>
+                        </div>
+                        <div class="seat">
+                            <input type="checkbox" id="A6" name="seats" class="seat-checkbox" value="A6">
+                            <label for="A6">6</label>
+                        </div>
+                    </div>
+                    
+                    <!-- Row B -->
+                    <div class="row">
+                        <div class="row-label">B</div>
+                        <div class="seat">
+                            <input type="checkbox" id="B1" name="seats" class="seat-checkbox" value="B1">
+                            <label for="B1">1</label>
+                        </div>
+                        <div class="seat">
+                            <input type="checkbox" id="B2" name="seats" class="seat-checkbox" value="B2">
+                            <label for="B2">2</label>
+                        </div>
+                        <div class="seat">
+                            <input type="checkbox" id="B3" name="seats" class="seat-checkbox" value="B3">
+                            <label for="B3">3</label>
+                        </div>
+                        <div class="seat">
+                            <input type="checkbox" id="B4" name="seats" class="seat-checkbox" value="B4">
+                            <label for="B4">4</label>
+                        </div>
+                        <div class="seat">
+                            <input type="checkbox" id="B5" name="seats" class="seat-checkbox" value="B5">
+                            <label for="B5">5</label>
+                        </div>
+                        <div class="seat">
+                            <input type="checkbox" id="B6" name="seats" class="seat-checkbox" value="B6">
+                            <label for="B6">6</label>
+                        </div>
+                    </div>
+                    
+                    <!-- Row C -->
+                    <div class="row">
+                        <div class="row-label">C</div>
+                        <div class="seat">
+                            <input type="checkbox" id="C1" name="seats" class="seat-checkbox" value="C1">
+                            <label for="C1">1</label>
+                        </div>
+                        <div class="seat">
+                            <input type="checkbox" id="C2" name="seats" class="seat-checkbox" value="C2">
+                            <label for="C2">2</label>
+                        </div>
+                        <div class="seat">
+                            <input type="checkbox" id="C3" name="seats" class="seat-checkbox" value="C3">
+                            <label for="C3">3</label>
+                        </div>
+                        <div class="seat">
+                            <input type="checkbox" id="C4" name="seats" class="seat-checkbox" value="C4">
+                            <label for="C4">4</label>
+                        </div>
+                        <div class="seat">
+                            <input type="checkbox" id="C5" name="seats" class="seat-checkbox" value="C5">
+                            <label for="C5">5</label>
+                        </div>
+                        <div class="seat">
+                            <input type="checkbox" id="C6" name="seats" class="seat-checkbox" value="C6">
+                            <label for="C6">6</label>
+                        </div>
+                    </div>
+                    
+                    <!-- Row D -->
+                    <div class="row">
+                        <div class="row-label">D</div>
+                        <div class="seat">
+                            <input type="checkbox" id="D1" name="seats" class="seat-checkbox" value="D1">
+                            <label for="D1">1</label>
+                        </div>
+                        <div class="seat">
+                            <input type="checkbox" id="D2" name="seats" class="seat-checkbox" value="D2">
+                            <label for="D2">2</label>
+                        </div>
+                        <div class="seat">
+                            <input type="checkbox" id="D3" name="seats" class="seat-checkbox" value="D3">
+                            <label for="D3">3</label>
+                        </div>
+                        <div class="seat">
+                            <input type="checkbox" id="D4" name="seats" class="seat-checkbox" value="D4">
+                            <label for="D4">4</label>
+                        </div>
+                        <div class="seat">
+                            <input type="checkbox" id="D5" name="seats" class="seat-checkbox" value="D5">
+                            <label for="D5">5</label>
+                        </div>
+                        <div class="seat">
+                            <input type="checkbox" id="D6" name="seats" class="seat-checkbox" value="D6">
+                            <label for="D6">6</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <button type="submit" class="submit-btn">Confirm Booking</button>
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -13,3 +13,12 @@
 [submodule "M6/M602/guided-instruction/cinema-booking"]
 	path = M6/M602/guided-instruction/cinema-booking
 	url = https://github.com/kunxin-chor/cinema-booking.git
+[submodule "M6/M603/hands-on/quiz-creator"]
+	path = M6/M603/hands-on/quiz-creator
+	url = https://github.com/kunxin-chor/quiz-creator-starter
+[submodule "M6/M602/short-forms"]
+	path = M6/M602/short-forms
+	url = https://github.com/kunxin-chor/short-forms-exercises
+[submodule "M6/M602/hands-on/short-forms"]
+	path = M6/M602/hands-on/short-forms
+	url = https://github.com/kunxin-chor/short-forms-exercises
