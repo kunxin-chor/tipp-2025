@@ -22,3 +22,6 @@
 [submodule "M6/M602/hands-on/short-forms"]
 	path = M6/M602/hands-on/short-forms
 	url = https://github.com/kunxin-chor/short-forms-exercises
+[submodule "M6/M604/book-manager-starter"]
+	path = M6/M604/book-manager-starter
+	url = https://github.com/kunxin-chor/book-manager-starter.git
