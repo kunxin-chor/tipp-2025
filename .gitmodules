@@ -25,3 +25,6 @@
 [submodule "M6/M604/book-manager-starter"]
 	path = M6/M604/book-manager-starter
 	url = https://github.com/kunxin-chor/book-manager-starter.git
+[submodule "M5/guided/data-dashboard"]
+	path = M5/guided/data-dashboard
+	url = https://github.com/kunxin-chor/data-dashboard-js
