@@ -1,0 +1,802 @@
+[
+  {
+    "product_id": "CC19C7B3",
+    "product_name": "Granola Bars",
+    "category": "Grocery",
+    "units_sold": 94,
+    "sale_date": "2024-01-07",
+    "revenue": 1519.25
+  },
+  {
+    "product_id": "4EAE6F5D",
+    "product_name": "Organic Green Tea",
+    "category": "Grocery",
+    "units_sold": 7,
+    "sale_date": "2024-03-22",
+    "revenue": 333.86
+  },
+  {
+    "product_id": "4B55A67C",
+    "product_name": "Dish Rack",
+    "category": "Home & Kitchen",
+    "units_sold": 8,
+    "sale_date": "2024-05-13",
+    "revenue": 299.25
+  },
+  {
+    "product_id": "CF7AE513",
+    "product_name": "Bluetooth Speaker",
+    "category": "Electronics",
+    "units_sold": 6,
+    "sale_date": "2024-01-26",
+    "revenue": 188.46
+  },
+  {
+    "product_id": "045784D2",
+    "product_name": "Almond Milk",
+    "category": "Grocery",
+    "units_sold": 74,
+    "sale_date": "2024-03-09",
+    "revenue": 3047.37
+  },
+  {
+    "product_id": "565E73BD",
+    "product_name": "Dish Rack",
+    "category": "Home & Kitchen",
+    "units_sold": 64,
+    "sale_date": "2024-03-30",
+    "revenue": 2846.36
+  },
+  {
+    "product_id": "8F0E0A11",
+    "product_name": "Self-help Guide",
+    "category": "Books",
+    "units_sold": 32,
+    "sale_date": "2024-06-07",
+    "revenue": 624.7
+  },
+  {
+    "product_id": "BBA4E10B",
+    "product_name": "Granola Bars",
+    "category": "Grocery",
+    "units_sold": 61,
+    "sale_date": "2024-01-09",
+    "revenue": 2141.95
+  },
+  {
+    "product_id": "735439F4",
+    "product_name": "Science Fiction Novel",
+    "category": "Books",
+    "units_sold": 23,
+    "sale_date": "2024-05-08",
+    "revenue": 309.63
+  },
+  {
+    "product_id": "39E7E371",
+    "product_name": "Jacket",
+    "category": "Apparel",
+    "units_sold": 36,
+    "sale_date": "2024-05-04",
+    "revenue": 609.12
+  },
+  {
+    "product_id": "BA25F93A",
+    "product_name": "Smart Watch",
+    "category": "Electronics",
+    "units_sold": 12,
+    "sale_date": "2024-01-02",
+    "revenue": 206.68
+  },
+  {
+    "product_id": "FD7E11A2",
+    "product_name": "T-shirt",
+    "category": "Apparel",
+    "units_sold": 37,
+    "sale_date": "2024-05-18",
+    "revenue": 1442.49
+  },
+  {
+    "product_id": "C4E3ECED",
+    "product_name": "Olive Oil",
+    "category": "Grocery",
+    "units_sold": 6,
+    "sale_date": "2024-06-19",
+    "revenue": 143.61
+  },
+  {
+    "product_id": "4BA17FEE",
+    "product_name": "Laptop Stand",
+    "category": "Electronics",
+    "units_sold": 23,
+    "sale_date": "2024-02-21",
+    "revenue": 599.55
+  },
+  {
+    "product_id": "39088CD5",
+    "product_name": "Laptop Stand",
+    "category": "Electronics",
+    "units_sold": 9,
+    "sale_date": "2024-05-18",
+    "revenue": 293.47
+  },
+  {
+    "product_id": "78E7D3D2",
+    "product_name": "Bluetooth Speaker",
+    "category": "Electronics",
+    "units_sold": 45,
+    "sale_date": "2024-04-20",
+    "revenue": 1013.16
+  },
+  {
+    "product_id": "C37A5BC0",
+    "product_name": "T-shirt",
+    "category": "Apparel",
+    "units_sold": 47,
+    "sale_date": "2024-06-22",
+    "revenue": 1650.83
+  },
+  {
+    "product_id": "1C4D552B",
+    "product_name": "Cookbook",
+    "category": "Books",
+    "units_sold": 6,
+    "sale_date": "2024-04-06",
+    "revenue": 291.71
+  },
+  {
+    "product_id": "7E302053",
+    "product_name": "Granola Bars",
+    "category": "Grocery",
+    "units_sold": 90,
+    "sale_date": "2024-06-20",
+    "revenue": 2149.31
+  },
+  {
+    "product_id": "E8225091",
+    "product_name": "Granola Bars",
+    "category": "Grocery",
+    "units_sold": 83,
+    "sale_date": "2024-04-14",
+    "revenue": 1617.5
+  },
+  {
+    "product_id": "DB428DD4",
+    "product_name": "Cutlery Set",
+    "category": "Home & Kitchen",
+    "units_sold": 26,
+    "sale_date": "2024-03-28",
+    "revenue": 499.3
+  },
+  {
+    "product_id": "381C23A7",
+    "product_name": "Dish Rack",
+    "category": "Home & Kitchen",
+    "units_sold": 62,
+    "sale_date": "2024-03-29",
+    "revenue": 1845.0
+  },
+  {
+    "product_id": "9EBE0DFB",
+    "product_name": "T-shirt",
+    "category": "Apparel",
+    "units_sold": 75,
+    "sale_date": "2024-04-23",
+    "revenue": 2956.7
+  },
+  {
+    "product_id": "528FB6B2",
+    "product_name": "USB-C Charger",
+    "category": "Electronics",
+    "units_sold": 81,
+    "sale_date": "2024-04-19",
+    "revenue": 2471.41
+  },
+  {
+    "product_id": "9338B93A",
+    "product_name": "Cutlery Set",
+    "category": "Home & Kitchen",
+    "units_sold": 78,
+    "sale_date": "2024-04-23",
+    "revenue": 1202.71
+  },
+  {
+    "product_id": "D98F5CDD",
+    "product_name": "Granola Bars",
+    "category": "Grocery",
+    "units_sold": 86,
+    "sale_date": "2024-06-19",
+    "revenue": 3233.13
+  },
+  {
+    "product_id": "214B9F33",
+    "product_name": "Science Fiction Novel",
+    "category": "Books",
+    "units_sold": 29,
+    "sale_date": "2024-04-27",
+    "revenue": 513.85
+  },
+  {
+    "product_id": "0D8D960C",
+    "product_name": "Wireless Mouse",
+    "category": "Electronics",
+    "units_sold": 43,
+    "sale_date": "2024-02-01",
+    "revenue": 1509.62
+  },
+  {
+    "product_id": "2582B4A2",
+    "product_name": "Jeans",
+    "category": "Apparel",
+    "units_sold": 43,
+    "sale_date": "2024-03-22",
+    "revenue": 502.44
+  },
+  {
+    "product_id": "B6056C77",
+    "product_name": "Jeans",
+    "category": "Apparel",
+    "units_sold": 41,
+    "sale_date": "2024-01-02",
+    "revenue": 889.35
+  },
+  {
+    "product_id": "9E5A1162",
+    "product_name": "Cutlery Set",
+    "category": "Home & Kitchen",
+    "units_sold": 24,
+    "sale_date": "2024-02-11",
+    "revenue": 617.15
+  },
+  {
+    "product_id": "018AFBC3",
+    "product_name": "Vacuum Cleaner",
+    "category": "Home & Kitchen",
+    "units_sold": 24,
+    "sale_date": "2024-04-14",
+    "revenue": 353.95
+  },
+  {
+    "product_id": "046E09B9",
+    "product_name": "Hoodie",
+    "category": "Apparel",
+    "units_sold": 93,
+    "sale_date": "2024-05-29",
+    "revenue": 3809.44
+  },
+  {
+    "product_id": "9BDBD450",
+    "product_name": "Vacuum Cleaner",
+    "category": "Home & Kitchen",
+    "units_sold": 62,
+    "sale_date": "2024-04-06",
+    "revenue": 769.23
+  },
+  {
+    "product_id": "1A1038F4",
+    "product_name": "Vacuum Cleaner",
+    "category": "Home & Kitchen",
+    "units_sold": 18,
+    "sale_date": "2024-04-29",
+    "revenue": 684.68
+  },
+  {
+    "product_id": "72E64E17",
+    "product_name": "Blender",
+    "category": "Home & Kitchen",
+    "units_sold": 81,
+    "sale_date": "2024-04-23",
+    "revenue": 3989.07
+  },
+  {
+    "product_id": "C2DFC1C0",
+    "product_name": "Running Shoes",
+    "category": "Apparel",
+    "units_sold": 89,
+    "sale_date": "2024-01-02",
+    "revenue": 2731.32
+  },
+  {
+    "product_id": "CA7D2EC7",
+    "product_name": "Jeans",
+    "category": "Apparel",
+    "units_sold": 6,
+    "sale_date": "2024-04-27",
+    "revenue": 171.2
+  },
+  {
+    "product_id": "92D0CF3D",
+    "product_name": "Science Fiction Novel",
+    "category": "Books",
+    "units_sold": 41,
+    "sale_date": "2024-05-14",
+    "revenue": 1104.56
+  },
+  {
+    "product_id": "7BEC1B3F",
+    "product_name": "Vacuum Cleaner",
+    "category": "Home & Kitchen",
+    "units_sold": 10,
+    "sale_date": "2024-02-26",
+    "revenue": 194.77
+  },
+  {
+    "product_id": "3739548A",
+    "product_name": "Cookbook",
+    "category": "Books",
+    "units_sold": 97,
+    "sale_date": "2024-01-13",
+    "revenue": 1712.2
+  },
+  {
+    "product_id": "C5EF163D",
+    "product_name": "Jeans",
+    "category": "Apparel",
+    "units_sold": 5,
+    "sale_date": "2024-04-05",
+    "revenue": 63.84
+  },
+  {
+    "product_id": "F23771A0",
+    "product_name": "Coffee Maker",
+    "category": "Home & Kitchen",
+    "units_sold": 42,
+    "sale_date": "2024-06-01",
+    "revenue": 1620.66
+  },
+  {
+    "product_id": "0C88C85B",
+    "product_name": "Self-help Guide",
+    "category": "Books",
+    "units_sold": 48,
+    "sale_date": "2024-06-16",
+    "revenue": 901.28
+  },
+  {
+    "product_id": "2D87B263",
+    "product_name": "Hoodie",
+    "category": "Apparel",
+    "units_sold": 41,
+    "sale_date": "2024-05-30",
+    "revenue": 871.2
+  },
+  {
+    "product_id": "8BC6C80C",
+    "product_name": "Brown Rice",
+    "category": "Grocery",
+    "units_sold": 78,
+    "sale_date": "2024-03-20",
+    "revenue": 1028.05
+  },
+  {
+    "product_id": "82A3E41D",
+    "product_name": "Vacuum Cleaner",
+    "category": "Home & Kitchen",
+    "units_sold": 33,
+    "sale_date": "2024-04-24",
+    "revenue": 1078.25
+  },
+  {
+    "product_id": "CACAECEB",
+    "product_name": "Blender",
+    "category": "Home & Kitchen",
+    "units_sold": 55,
+    "sale_date": "2024-05-22",
+    "revenue": 1894.84
+  },
+  {
+    "product_id": "031B89DC",
+    "product_name": "Jacket",
+    "category": "Apparel",
+    "units_sold": 19,
+    "sale_date": "2024-01-25",
+    "revenue": 361.37
+  },
+  {
+    "product_id": "AF22A847",
+    "product_name": "Hoodie",
+    "category": "Apparel",
+    "units_sold": 5,
+    "sale_date": "2024-06-04",
+    "revenue": 180.51
+  },
+  {
+    "product_id": "1D2FFB0A",
+    "product_name": "T-shirt",
+    "category": "Apparel",
+    "units_sold": 5,
+    "sale_date": "2024-06-21",
+    "revenue": 61.4
+  },
+  {
+    "product_id": "7A972175",
+    "product_name": "History Book",
+    "category": "Books",
+    "units_sold": 52,
+    "sale_date": "2024-05-01",
+    "revenue": 663.28
+  },
+  {
+    "product_id": "A6C925D7",
+    "product_name": "Laptop Stand",
+    "category": "Electronics",
+    "units_sold": 75,
+    "sale_date": "2024-01-07",
+    "revenue": 2486.24
+  },
+  {
+    "product_id": "948F333C",
+    "product_name": "Hoodie",
+    "category": "Apparel",
+    "units_sold": 93,
+    "sale_date": "2024-03-27",
+    "revenue": 4167.82
+  },
+  {
+    "product_id": "E5F8CDAD",
+    "product_name": "Coffee Maker",
+    "category": "Home & Kitchen",
+    "units_sold": 47,
+    "sale_date": "2024-02-07",
+    "revenue": 1670.98
+  },
+  {
+    "product_id": "67A5C6F2",
+    "product_name": "Wireless Mouse",
+    "category": "Electronics",
+    "units_sold": 5,
+    "sale_date": "2024-02-19",
+    "revenue": 210.16
+  },
+  {
+    "product_id": "B30E3AC7",
+    "product_name": "T-shirt",
+    "category": "Apparel",
+    "units_sold": 89,
+    "sale_date": "2024-04-18",
+    "revenue": 2030.01
+  },
+  {
+    "product_id": "B60AF374",
+    "product_name": "Bluetooth Speaker",
+    "category": "Electronics",
+    "units_sold": 74,
+    "sale_date": "2024-02-12",
+    "revenue": 1509.44
+  },
+  {
+    "product_id": "1E50AA5F",
+    "product_name": "Blender",
+    "category": "Home & Kitchen",
+    "units_sold": 40,
+    "sale_date": "2024-02-15",
+    "revenue": 1883.88
+  },
+  {
+    "product_id": "D00F7302",
+    "product_name": "Hoodie",
+    "category": "Apparel",
+    "units_sold": 17,
+    "sale_date": "2024-01-14",
+    "revenue": 491.7
+  },
+  {
+    "product_id": "87C73777",
+    "product_name": "Hoodie",
+    "category": "Apparel",
+    "units_sold": 7,
+    "sale_date": "2024-01-30",
+    "revenue": 330.0
+  },
+  {
+    "product_id": "AFA426FC",
+    "product_name": "Jeans",
+    "category": "Apparel",
+    "units_sold": 62,
+    "sale_date": "2024-06-29",
+    "revenue": 2214.3
+  },
+  {
+    "product_id": "36802440",
+    "product_name": "Cookbook",
+    "category": "Books",
+    "units_sold": 31,
+    "sale_date": "2024-06-20",
+    "revenue": 926.21
+  },
+  {
+    "product_id": "D993594D",
+    "product_name": "Running Shoes",
+    "category": "Apparel",
+    "units_sold": 59,
+    "sale_date": "2024-04-04",
+    "revenue": 1225.14
+  },
+  {
+    "product_id": "A33986E8",
+    "product_name": "T-shirt",
+    "category": "Apparel",
+    "units_sold": 87,
+    "sale_date": "2024-02-15",
+    "revenue": 2763.32
+  },
+  {
+    "product_id": "08206F43",
+    "product_name": "Wireless Mouse",
+    "category": "Electronics",
+    "units_sold": 60,
+    "sale_date": "2024-03-02",
+    "revenue": 1039.01
+  },
+  {
+    "product_id": "F31C9CA6",
+    "product_name": "Wireless Mouse",
+    "category": "Electronics",
+    "units_sold": 42,
+    "sale_date": "2024-02-03",
+    "revenue": 1057.99
+  },
+  {
+    "product_id": "AEE96F46",
+    "product_name": "Jeans",
+    "category": "Apparel",
+    "units_sold": 10,
+    "sale_date": "2024-02-24",
+    "revenue": 236.13
+  },
+  {
+    "product_id": "B1B8310D",
+    "product_name": "Running Shoes",
+    "category": "Apparel",
+    "units_sold": 65,
+    "sale_date": "2024-03-02",
+    "revenue": 1098.62
+  },
+  {
+    "product_id": "AE8FD576",
+    "product_name": "Hoodie",
+    "category": "Apparel",
+    "units_sold": 50,
+    "sale_date": "2024-01-10",
+    "revenue": 628.47
+  },
+  {
+    "product_id": "D2D74CE5",
+    "product_name": "Jeans",
+    "category": "Apparel",
+    "units_sold": 37,
+    "sale_date": "2024-04-26",
+    "revenue": 1636.27
+  },
+  {
+    "product_id": "A5B1EF17",
+    "product_name": "Wireless Mouse",
+    "category": "Electronics",
+    "units_sold": 43,
+    "sale_date": "2024-06-21",
+    "revenue": 2060.77
+  },
+  {
+    "product_id": "8F449F29",
+    "product_name": "Vacuum Cleaner",
+    "category": "Home & Kitchen",
+    "units_sold": 44,
+    "sale_date": "2024-01-10",
+    "revenue": 1781.73
+  },
+  {
+    "product_id": "A9B67A41",
+    "product_name": "Dish Rack",
+    "category": "Home & Kitchen",
+    "units_sold": 43,
+    "sale_date": "2024-02-25",
+    "revenue": 488.13
+  },
+  {
+    "product_id": "16272554",
+    "product_name": "Running Shoes",
+    "category": "Apparel",
+    "units_sold": 19,
+    "sale_date": "2024-01-29",
+    "revenue": 582.02
+  },
+  {
+    "product_id": "DADBC541",
+    "product_name": "Organic Green Tea",
+    "category": "Grocery",
+    "units_sold": 26,
+    "sale_date": "2024-04-06",
+    "revenue": 1196.3
+  },
+  {
+    "product_id": "EC5682EC",
+    "product_name": "USB-C Charger",
+    "category": "Electronics",
+    "units_sold": 59,
+    "sale_date": "2024-05-12",
+    "revenue": 1377.02
+  },
+  {
+    "product_id": "824675B1",
+    "product_name": "Cutlery Set",
+    "category": "Home & Kitchen",
+    "units_sold": 39,
+    "sale_date": "2024-06-03",
+    "revenue": 1450.02
+  },
+  {
+    "product_id": "82540B59",
+    "product_name": "Wireless Mouse",
+    "category": "Electronics",
+    "units_sold": 18,
+    "sale_date": "2024-06-29",
+    "revenue": 326.0
+  },
+  {
+    "product_id": "F4BE4140",
+    "product_name": "Cookbook",
+    "category": "Books",
+    "units_sold": 88,
+    "sale_date": "2024-01-03",
+    "revenue": 2298.46
+  },
+  {
+    "product_id": "47D50725",
+    "product_name": "Almond Milk",
+    "category": "Grocery",
+    "units_sold": 13,
+    "sale_date": "2024-06-05",
+    "revenue": 498.44
+  },
+  {
+    "product_id": "02C894BF",
+    "product_name": "USB-C Charger",
+    "category": "Electronics",
+    "units_sold": 7,
+    "sale_date": "2024-04-15",
+    "revenue": 220.05
+  },
+  {
+    "product_id": "B1919617",
+    "product_name": "Dish Rack",
+    "category": "Home & Kitchen",
+    "units_sold": 51,
+    "sale_date": "2024-06-19",
+    "revenue": 943.92
+  },
+  {
+    "product_id": "1E8740DD",
+    "product_name": "Running Shoes",
+    "category": "Apparel",
+    "units_sold": 75,
+    "sale_date": "2024-06-21",
+    "revenue": 2941.42
+  },
+  {
+    "product_id": "5BB51385",
+    "product_name": "Children's Storybook",
+    "category": "Books",
+    "units_sold": 61,
+    "sale_date": "2024-04-06",
+    "revenue": 2929.96
+  },
+  {
+    "product_id": "F2C13BBE",
+    "product_name": "Bluetooth Speaker",
+    "category": "Electronics",
+    "units_sold": 82,
+    "sale_date": "2024-01-09",
+    "revenue": 1490.99
+  },
+  {
+    "product_id": "2745A44B",
+    "product_name": "Running Shoes",
+    "category": "Apparel",
+    "units_sold": 37,
+    "sale_date": "2024-01-28",
+    "revenue": 1248.34
+  },
+  {
+    "product_id": "4324EA59",
+    "product_name": "Children's Storybook",
+    "category": "Books",
+    "units_sold": 67,
+    "sale_date": "2024-01-24",
+    "revenue": 2682.94
+  },
+  {
+    "product_id": "AA4C7473",
+    "product_name": "Blender",
+    "category": "Home & Kitchen",
+    "units_sold": 89,
+    "sale_date": "2024-06-18",
+    "revenue": 2018.86
+  },
+  {
+    "product_id": "5C15638E",
+    "product_name": "Hoodie",
+    "category": "Apparel",
+    "units_sold": 5,
+    "sale_date": "2024-02-04",
+    "revenue": 186.05
+  },
+  {
+    "product_id": "EEC732DB",
+    "product_name": "Dish Rack",
+    "category": "Home & Kitchen",
+    "units_sold": 13,
+    "sale_date": "2024-04-22",
+    "revenue": 583.57
+  },
+  {
+    "product_id": "F178A618",
+    "product_name": "Coffee Maker",
+    "category": "Home & Kitchen",
+    "units_sold": 97,
+    "sale_date": "2024-06-13",
+    "revenue": 1740.58
+  },
+  {
+    "product_id": "7B369A8F",
+    "product_name": "Running Shoes",
+    "category": "Apparel",
+    "units_sold": 29,
+    "sale_date": "2024-01-08",
+    "revenue": 1162.83
+  },
+  {
+    "product_id": "6D66C9EE",
+    "product_name": "USB-C Charger",
+    "category": "Electronics",
+    "units_sold": 21,
+    "sale_date": "2024-04-03",
+    "revenue": 377.16
+  },
+  {
+    "product_id": "D29D4345",
+    "product_name": "Blender",
+    "category": "Home & Kitchen",
+    "units_sold": 9,
+    "sale_date": "2024-03-15",
+    "revenue": 226.16
+  },
+  {
+    "product_id": "37F06365",
+    "product_name": "USB-C Charger",
+    "category": "Electronics",
+    "units_sold": 25,
+    "sale_date": "2024-02-07",
+    "revenue": 359.97
+  },
+  {
+    "product_id": "B69324F0",
+    "product_name": "Laptop Stand",
+    "category": "Electronics",
+    "units_sold": 22,
+    "sale_date": "2024-01-24",
+    "revenue": 247.96
+  },
+  {
+    "product_id": "9A650032",
+    "product_name": "Bluetooth Speaker",
+    "category": "Electronics",
+    "units_sold": 85,
+    "sale_date": "2024-01-09",
+    "revenue": 3260.29
+  },
+  {
+    "product_id": "F596C217",
+    "product_name": "Cutlery Set",
+    "category": "Home & Kitchen",
+    "units_sold": 34,
+    "sale_date": "2024-03-21",
+    "revenue": 482.06
+  },
+  {
+    "product_id": "0ED9C808",
+    "product_name": "Science Fiction Novel",
+    "category": "Books",
+    "units_sold": 97,
+    "sale_date": "2024-03-06",
+    "revenue": 3260.14
+  }
+]
