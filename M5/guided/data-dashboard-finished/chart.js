@@ -1,5 +1,5 @@
 // Utility function to draw a bar chart
-function drawBarChart(containerId, seriesData, labels, tooltipFormatter = null, options = {}) {
+function drawBarChart(containerId, seriesData, labels, tooltipFormatter = null, valueFormatter = value => value, options = {}) {
     // Default options
     const defaultOptions = {
         chart: {
@@ -31,9 +31,7 @@ function drawBarChart(containerId, seriesData, labels, tooltipFormatter = null, 
         },
         yaxis: {
             labels: {
-                formatter: function(value) {
-                    return value;
-                }
+                formatter: valueFormatter
             }
         },
         fill: {

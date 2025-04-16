@@ -1,0 +1,14 @@
+{
+    "EMP001": {
+        "employee_name": "Sarah Chen",
+        "position": "Senior Sales Representative"
+    },
+    "EMP002": {
+        "employee_name": "John Smith",
+        "position": "Sales Representative"
+    },
+    "EMP003": {
+        "employee_name": "Maria Garcia",
+        "position": "Sales Representative"
+    }
+}
