@@ -28,3 +28,6 @@
 [submodule "M5/guided/data-dashboard"]
 	path = M5/guided/data-dashboard
 	url = https://github.com/kunxin-chor/data-dashboard-js
+[submodule "M5/guided/data-dashboard-finished"]
+	path = M5/guided/data-dashboard-finished
+	url = https://github.com/kunxin-chor/data-dashboard-js
