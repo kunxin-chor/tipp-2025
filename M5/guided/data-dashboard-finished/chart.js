@@ -197,8 +197,12 @@ function groupByAndSum(data, groupKey, sumKey) {
     }
     
     // Convert the object to an array of objects
-    return Object.entries(tempResult).map(([key, value]) => ({
-        [groupKey]: key,
-        [sumKey]: value
-    }));
+    const result = [];
+    for (const [key, value] of Object.entries(tempResult)) {
+        result.push({
+            [groupKey]: key,
+            [sumKey]: value
+        });
+    }
+    return result;
 }
