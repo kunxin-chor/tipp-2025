@@ -1,7 +1,5 @@
 // Utility function to draw a bar chart
 function drawBarChart(containerId, seriesData, labels, tooltipFormatter = null, valueFormatter = null, dataLabelFormatter = null, options = {}) {
-   
-    console.log("drawBarChart | dataLabelFormatter =", dataLabelFormatter)
     // Default options
     const defaultOptions = {
         chart: {
@@ -73,8 +71,7 @@ function drawBarChart(containerId, seriesData, labels, tooltipFormatter = null, 
 }
 
 // Utility function to draw a line chart
-function drawLineChart(containerId, seriesData, tooltipFormatter = null, valueFormatter = null, dataLabelFormatter = null,options = {},) {
-    console.log("drawLineChart | dataLabelFormatter =", dataLabelFormatter)
+function drawLineChart(containerId, seriesData, tooltipFormatter = null, valueFormatter = null, options = {}, dataLabelFormatter = null) {
     // Default options for line chart
     const defaultOptions = {
         chart: {

@@ -1,0 +1,56 @@
+[
+    {
+        "month": "2024-01",
+        "employee_id": "EMP001",
+        "sales_amount": 12450.75,
+        "transactions": 45
+    },
+    {
+        "month": "2024-01",
+        "employee_id": "EMP002",
+        "sales_amount": 15680.30,
+        "transactions": 52
+    },
+    {
+        "month": "2024-01",
+        "employee_id": "EMP003",
+        "sales_amount": 14250.60,
+        "transactions": 48
+    },
+    {
+        "month": "2024-02",
+        "employee_id": "EMP001",
+        "sales_amount": 13890.45,
+        "transactions": 49
+    },
+    {
+        "month": "2024-02",
+        "employee_id": "EMP002",
+        "sales_amount": 16420.80,
+        "transactions": 55
+    },
+    {
+        "month": "2024-02",
+        "employee_id": "EMP003",
+        "sales_amount": 15780.25,
+        "transactions": 51
+    },
+    {
+        "month": "2024-03",
+        "employee_id": "EMP001",
+        "sales_amount": 14750.50,
+        "transactions": 50
+    },
+    {
+        "month": "2024-03",
+        "employee_id": "EMP002",
+        "sales_amount": 17280.75,
+        "transactions": 57
+    },
+    {
+        "month": "2024-03",
+        "employee_id": "EMP003",
+        "sales_amount": 16450.30,
+        "transactions": 53
+    }
+]

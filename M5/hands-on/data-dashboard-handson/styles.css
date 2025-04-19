@@ -1,0 +1,87 @@
+.chart-container {
+    min-height: calc(50vh - 100px);
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    background-color: #fff;
+}
+
+.chart-area {
+    position: relative;
+}
+
+.chart-area h5 {
+    margin-bottom: 15px;
+}
+
+.chart-placeholder {
+    height: 100%;
+}
+
+.console-container {
+    height: calc(50vh - 60px);
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    padding: 10px 15px;
+    border-radius: 5px;
+    overflow-y: auto;
+
+}
+
+.console-container h5 {
+    margin: 0;
+    padding: 0;
+
+}
+
+.console-output {
+    white-space: pre-wrap;
+    font-family: 'Courier New', monospace; 
+    color: #ecf0f1;
+    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.console-output .console-line {
+    margin: 0;
+    padding: 3px;
+    border-bottom: 1px dotted rgba(255, 255, 255, 0.2);
+}
+
+.console-output .message {
+    display: inline-block;
+    color: #66d9ef;
+}
+
+.console-output .message::before {
+    content: "log: ";
+    color: #c792ea;
+    font-weight: bold;
+}
+
+.console-output .message::after {
+    content: "\A";
+    white-space: pre;
+}
+
+.console-output .timestamp {
+    color: #95a5a6;
+    font-size: 0.9em;
+    margin-right: 10px;
+}
+
+.console-output .error {
+    color: #e74c3c;
+    background-color: rgba(231, 76, 60, 0.1);
+}
+
+.console-output .warning {
+    color: #f1c40f;
+    background-color: rgba(241, 196, 15, 0.1);
+}
+
+/* Add some margin between rows */
+.row:not(:first-child) {
+    margin-top: 20px;
+}

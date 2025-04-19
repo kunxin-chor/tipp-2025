@@ -31,3 +31,6 @@
 [submodule "M5/guided/data-dashboard-finished"]
 	path = M5/guided/data-dashboard-finished
 	url = https://github.com/kunxin-chor/data-dashboard-js
+[submodule "M5/guided/form-validator"]
+	path = M5/guided/form-validator
+	url = https://github.com/kunxin-chor/form-validator
