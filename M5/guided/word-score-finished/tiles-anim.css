@@ -1,0 +1,19 @@
+/* Animations for Scrabble tiles */
+@keyframes tile-add {
+  0% { transform: scale(0.5) rotate(-10deg); opacity: 0; }
+  80% { transform: scale(1.1) rotate(2deg); opacity: 1; }
+  100% { transform: scale(1) rotate(0deg); opacity: 1; }
+}
+
+@keyframes tile-remove {
+  0% { transform: scale(1) rotate(0deg); opacity: 1; }
+  100% { transform: scale(0.5) rotate(10deg); opacity: 0; }
+}
+
+.scrabble-tile.adding {
+  animation: tile-add 0.35s cubic-bezier(.2,1.5,.5,1) both;
+}
+
+.scrabble-tile.removing {
+  animation: tile-remove 0.3s cubic-bezier(.55,.06,.68,.19) both;
+}

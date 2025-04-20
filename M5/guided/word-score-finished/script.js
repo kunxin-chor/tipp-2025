@@ -80,7 +80,7 @@ function newGame() {
     bag = createBag();
     hand = [];
     score = 0;
-    turnsLeft = 20;
+    turnsLeft = 10;
     gameOver = false;
     // Clear log
     const table = document.getElementById('log-table');
@@ -127,7 +127,7 @@ document.addEventListener('DOMContentLoaded', newGame);
 
 const HAND_SIZE = 12;
 let score = 0;
-let turnsLeft = 20;
+let turnsLeft = 10;
 let gameOver = false;
 
 function drawFromBag(count) {

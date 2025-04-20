@@ -77,49 +77,90 @@ function updateTurnsLeft(turnsLeft) {
 window.updateTurnsLeft = updateTurnsLeft;
 
 
-function updateHand(hand) {
 
+
+function updateHand(hand) {
     const SCRABBLE_TILE_SCORES = {
         A: 1, B: 3, C: 3, D: 2, E: 1, F: 4, G: 2, H: 4, I: 1, J: 8, K: 5, L: 1, M: 3,
         N: 1, O: 1, P: 3, Q: 10, R: 1, S: 1, T: 1, U: 1, V: 4, W: 4, X: 8, Y: 4, Z: 10
     };
-
     const handEl = document.getElementById('hand');
     if (!handEl) return;
-    handEl.innerHTML = '';
-    if (!hand || hand.length === 0) return;
-    hand.forEach(letter => {
-        const tile = document.createElement('span');
-        tile.className = 'scrabble-tile d-inline-block position-relative text-center mx-1 mb-2';
-        tile.style.display = 'inline-block';
-        tile.style.width = '64px';
-        tile.style.height = '72px';
-        tile.style.border = '2px solid #bfa76f';
-        tile.style.borderRadius = '6px';
-        tile.style.background = '#f5e6b2';
-        tile.style.fontWeight = 'bold';
-        tile.style.fontSize = '2rem';
-        tile.style.verticalAlign = 'middle';
-        tile.style.boxShadow = '2px 2px 4px #bfa76f55';
-        tile.style.position = 'relative';
-        tile.style.userSelect = 'none';
-        tile.textContent = letter;
-        // Score at lower right
-        const score = document.createElement('small');
-        score.textContent = SCRABBLE_TILE_SCORES[letter.toUpperCase()] || '';
-        score.style.position = 'absolute';
-        score.style.bottom = '4px';
-        score.style.right = '8px';
-        score.style.fontSize = '0.9rem';
-        score.style.color = '#7c6a3b';
-        score.style.textAlign = 'right';
-        score.style.zIndex = '2';
-        score.style.background = 'transparent';
-        tile.appendChild(score);
-        handEl.appendChild(tile);
-    });
-}
 
+    // --- ANIMATION LOGIC ---
+    // 1. Animate removal of tiles not in new hand
+    const prevTiles = Array.from(handEl.children);
+    const prevHandArr = prevTiles.map(tile => tile.textContent && tile.textContent[0]);
+    const newHandArr = hand ? [...hand] : [];
+    prevTiles.forEach(tile => {
+        const letter = tile.textContent && tile.textContent[0];
+        if (!newHandArr.includes(letter)) {
+            tile.classList.add('removing');
+            tile.addEventListener('animationend', () => {
+                tile.remove();
+            }, { once: true });
+        }
+    });
+
+    // 2. Animate addition of new tiles after a longer delay
+    setTimeout(() => {
+        // Remove all tiles (except those mid-removal)
+        Array.from(handEl.children).forEach(tile => {
+            if (!tile.classList.contains('removing')) tile.remove();
+        });
+
+        if (!hand || hand.length === 0) return;
+        // Only new tiles get the 'adding' animation
+        // Track how many of each letter are in prevHandArr and newHandArr
+        const prevHandCount = {};
+        prevHandArr.forEach(l => { prevHandCount[l] = (prevHandCount[l] || 0) + 1; });
+        const newHandCount = {};
+        newHandArr.forEach(l => { newHandCount[l] = (newHandCount[l] || 0) + 1; });
+        // For each letter in the new hand, only animate the number of new instances
+        const usedPrev = {};
+        hand.forEach(letter => {
+            const tile = document.createElement('span');
+            let isNew = false;
+            usedPrev[letter] = (usedPrev[letter] || 0) + 1;
+            if (!prevHandCount[letter] || usedPrev[letter] > prevHandCount[letter]) {
+                isNew = true;
+            }
+            tile.className = 'scrabble-tile d-inline-block position-relative text-center mx-1 mb-2' + (isNew ? ' adding' : '');
+            tile.style.display = 'inline-block';
+            tile.style.width = '64px';
+            tile.style.height = '72px';
+            tile.style.border = '2px solid #bfa76f';
+            tile.style.borderRadius = '6px';
+            tile.style.background = '#f5e6b2';
+            tile.style.fontWeight = 'bold';
+            tile.style.fontSize = '2rem';
+            tile.style.verticalAlign = 'middle';
+            tile.style.boxShadow = '2px 2px 4px #bfa76f55';
+            tile.style.position = 'relative';
+            tile.style.userSelect = 'none';
+            tile.textContent = letter;
+            // Score at lower right
+            const score = document.createElement('small');
+            score.textContent = SCRABBLE_TILE_SCORES[letter.toUpperCase()] || '';
+            score.style.position = 'absolute';
+            score.style.bottom = '4px';
+            score.style.right = '8px';
+            score.style.fontSize = '0.9rem';
+            score.style.color = '#7c6a3b';
+            score.style.textAlign = 'right';
+            score.style.zIndex = '2';
+            score.style.background = 'transparent';
+            tile.appendChild(score);
+            handEl.appendChild(tile);
+            // Remove adding class after animation
+            if (isNew) {
+                tile.addEventListener('animationend', () => {
+                    tile.classList.remove('adding');
+                }, { once: true });
+            }
+        });
+    }, 600); // 600ms delay for removal animation
+}
 window.updateHand = updateHand;
 function showInvalidWord(word) {
     const invalidMsg = document.getElementById('invalid-word-msg');
