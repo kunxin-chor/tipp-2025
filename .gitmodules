@@ -34,3 +34,6 @@
 [submodule "M5/guided/form-validator"]
 	path = M5/guided/form-validator
 	url = https://github.com/kunxin-chor/form-validator
+[submodule "M5/guided/word-score-start"]
+	path = M5/guided/word-score-start
+	url = https://github.com/kunxin-chor/word-score-start
