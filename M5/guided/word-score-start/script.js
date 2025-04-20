@@ -12,10 +12,21 @@ let bag = createBag();
 let hand = []; // hand is a string of letters
 
 
-function enterWord(word) {
+async function enterWord(word) {
     showMessage(`enterWord event triggered with: ${word}`, 'info');
-    addLogEntry("TEST", 10); // the addLogEntry function allows you to add a row to the log table
-    // TODO: Validate word, update score, update hand
+    // check if the word is a valid
+    const valid = await checkWordValid(word);
+    if (!valid) {
+        showInvalidWord(word);
+        return;
+    } else {
+        // TODO: Calculate the correct score
+        addLogEntry(word, 10); // the addLogEntry function allows you to add a row to the log table
+    
+        // TODO: perform other game logic if the word is valid
+    }
+  
+
 }
 
 function redraw() {
@@ -36,6 +47,8 @@ function replenish() {
 
 function newGame() {
     showMessage('newGame event triggered', 'success');
+    updateScore(100);
+    updateTurnsLeft(10);
     // TODO: Initialize game state
     replenish(); // draw the initial hand
 }
