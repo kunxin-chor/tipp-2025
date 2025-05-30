@@ -37,3 +37,12 @@
 [submodule "M5/guided/word-score-start"]
 	path = M5/guided/word-score-start
 	url = https://github.com/kunxin-chor/word-score-start
+[submodule "M8/03-dql-business-analysis"]
+	path = M8/03-dql-business-analysis
+	url = https://github.com/kunxin-chor/03-dql-business-analysis
+[submodule "M8/04-mysql-express-cico"]
+	path = M8/04-mysql-express-cico
+	url = https://github.com/kunxin-chor/mysql-express-cico
+[submodule "M5/guided/quiz-creator"]
+	path = M5/guided/quiz-creator
+	url = https://github.com/kunxin-chor/quiz-creator-starter

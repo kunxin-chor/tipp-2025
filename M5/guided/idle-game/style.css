@@ -1,0 +1,125 @@
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: linear-gradient(to top, #2c3e50 0%, #3498db 100%);
+    color: #f3f3f3;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+
+.city-container {
+    max-width: 600px;
+    margin: 40px auto;
+    background: rgba(30, 30, 40, 0.97);
+    border-radius: 16px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    padding: 2em 2em 1.5em 2em;
+}
+
+h1, h2 {
+    color: #ffd700;
+    margin-bottom: 0.5em;
+}
+
+.resources-panel, .production-panel {
+    background: rgba(44, 62, 80, 0.95);
+    border-radius: 12px;
+    padding: 1em 1.5em;
+    margin-bottom: 1em;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.09);
+    font-size: 1.1em;
+    display: flex;
+    align-items: center;
+    gap: 1em;
+}
+
+.fa-icon {
+    font-size: 1.5em;
+    margin-right: 0.5em;
+    color: #00e6e6;
+}
+
+#buildings {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+    margin-bottom: 1.5em;
+    justify-content: flex-start;
+}
+
+.building-card {
+    background: rgba(52, 73, 94, 0.93);
+    border-radius: 10px;
+    padding: 0.7em 1.2em;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.7em;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+    font-size: 1.05em;
+    min-width: 210px;
+    max-width: 220px;
+    min-height: 160px;
+    flex: 1 0 210px;
+}
+
+@media (max-width: 700px) {
+    #buildings {
+        gap: 0.4em;
+    }
+    .building-card {
+        min-width: 140px;
+        max-width: 100%;
+        min-height: 120px;
+        font-size: 0.95em;
+    }
+}
+
+
+button {
+    margin: 0.2em 0.5em 0.2em 0;
+    padding: 0.5em 1.2em;
+    background: linear-gradient(90deg, #3498db 60%, #2980b9 100%);
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 600;
+    box-shadow: 0 2px 6px rgba(44, 62, 80, 0.12);
+    transition: background 0.2s, transform 0.1s;
+}
+
+button:active {
+    transform: scale(0.97);
+}
+
+button:disabled {
+    background: #444a57;
+    color: #888;
+    cursor: not-allowed;
+}
+
+.upgrade-card {
+    background: rgba(41, 128, 185, 0.92);
+    border-radius: 8px;
+    padding: 0.6em 1em;
+    margin-bottom: 0.6em;
+    font-size: 1em;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 0.8em;
+}
+
+@media (max-width: 700px) {
+    .city-container {
+        padding: 1em 0.3em;
+    }
+    .resources-panel, .production-panel {
+        flex-direction: column;
+        gap: 0.4em;
+        font-size: 1em;
+    }
+}

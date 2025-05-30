@@ -1,0 +1,382 @@
+CREATE DATABASE IF NOT EXISTS sales_db;
+USE sales_db;
+
+-- Sample Dataset SQL
+DROP TABLE IF EXISTS sales;
+DROP TABLE IF EXISTS salespeople;
+DROP TABLE IF EXISTS products;
+DROP TABLE IF EXISTS rnd_expenditures;
+DROP TABLE IF EXISTS product_lines;
+DROP TABLE IF EXISTS branches;
+DROP TABLE IF EXISTS regions;
+
+CREATE TABLE regions (
+  region_id INT PRIMARY KEY,
+  region_name VARCHAR(50) NOT NULL UNIQUE
+);
+
+CREATE TABLE branches (
+  branch_id INT PRIMARY KEY,
+  region_id INT NOT NULL,
+  opened_date DATE NOT NULL,
+  closed_date DATE DEFAULT NULL,
+  FOREIGN KEY (region_id) REFERENCES regions(region_id)
+);
+
+CREATE TABLE product_lines (
+  product_line_id INT PRIMARY KEY,
+  line_name VARCHAR(50) NOT NULL,
+  risk_category ENUM('low', 'medium', 'high') NOT NULL
+);
+
+CREATE TABLE rnd_expenditures (
+  product_line_id INT NOT NULL,
+  fiscal_year YEAR NOT NULL,
+  expense DECIMAL(12,2) NOT NULL,
+  PRIMARY KEY (product_line_id, fiscal_year),
+  FOREIGN KEY (product_line_id) REFERENCES product_lines(product_line_id)
+);
+
+CREATE TABLE products (
+  product_id INT PRIMARY KEY,
+  product_name VARCHAR(100) NOT NULL,
+  product_line_id INT NOT NULL,
+  unit_price DECIMAL(10,2) NOT NULL,
+  production_cost DECIMAL(10,2) NOT NULL,
+  FOREIGN KEY (product_line_id) REFERENCES product_lines(product_line_id)
+);
+
+CREATE TABLE salespeople (
+  salesperson_id INT PRIMARY KEY,
+  name VARCHAR(50) NOT NULL,
+  branch_id INT NOT NULL,
+  manager_id INT DEFAULT NULL,
+  hire_date DATE NOT NULL,
+  base_salary DECIMAL(10,2) NOT NULL,
+  commission_rate DECIMAL(5,2) NOT NULL,
+  FOREIGN KEY (branch_id) REFERENCES branches(branch_id),
+  FOREIGN KEY (manager_id) REFERENCES salespeople(salesperson_id)
+);
+
+CREATE TABLE sales (
+  sale_id INT PRIMARY KEY,
+  product_id INT NOT NULL,
+  salesperson_id INT NOT NULL,
+  sale_date DATE NOT NULL,
+  quantity INT NOT NULL,
+  customer_region_id INT NOT NULL,
+  discount DECIMAL(5,2) DEFAULT 0.00,
+  FOREIGN KEY (product_id) REFERENCES products(product_id),
+  FOREIGN KEY (salesperson_id) REFERENCES salespeople(salesperson_id),
+  FOREIGN KEY (customer_region_id) REFERENCES regions(region_id)
+);
+
+-- Regions
+INSERT INTO regions VALUES(1, 'North');
+INSERT INTO regions VALUES(2, 'South');
+INSERT INTO regions VALUES(3, 'East');
+INSERT INTO regions VALUES(4, 'West');
+INSERT INTO regions VALUES(5, 'Central');
+INSERT INTO regions VALUES(6, 'International');
+
+-- Branches
+INSERT INTO branches VALUES(1, 1, '2010-05-20', NULL);
+INSERT INTO branches VALUES(2, 1, '2012-07-15', NULL);
+INSERT INTO branches VALUES(3, 2, '2015-03-01', NULL);
+INSERT INTO branches VALUES(4, 2, '2018-11-10', NULL);
+INSERT INTO branches VALUES(5, 3, '2016-09-05', '2024-12-31');
+INSERT INTO branches VALUES(6, 4, '2020-01-20', NULL);
+INSERT INTO branches VALUES(7, 4, '2021-06-30', NULL);
+INSERT INTO branches VALUES(8, 5, '2019-04-12', NULL);
+INSERT INTO branches VALUES(9, 6, '2022-08-22', NULL);
+INSERT INTO branches VALUES(10, 6, '2023-02-14', NULL);
+
+-- Product Lines
+INSERT INTO product_lines VALUES(1, 'Alpha', 'high');
+INSERT INTO product_lines VALUES(2, 'Beta', 'medium');
+INSERT INTO product_lines VALUES(3, 'Gamma', 'low');
+INSERT INTO product_lines VALUES(4, 'Delta', 'high');
+INSERT INTO product_lines VALUES(5, 'Epsilon', 'medium');
+INSERT INTO product_lines VALUES(6, 'Zeta', 'low');
+INSERT INTO product_lines VALUES(7, 'Eta', 'medium');
+INSERT INTO product_lines VALUES(8, 'Theta', 'low');
+INSERT INTO product_lines VALUES(9, 'Iota', 'high');
+INSERT INTO product_lines VALUES(10, 'Kappa', 'medium');
+
+-- R&D Expenditures (2021-2024)
+INSERT INTO rnd_expenditures VALUES(1, 2021, 1433912.00);
+INSERT INTO rnd_expenditures VALUES(1, 2022, 1720694.40);
+INSERT INTO rnd_expenditures VALUES(1, 2023, 2007476.80);
+INSERT INTO rnd_expenditures VALUES(1, 2024, 2294259.20);
+INSERT INTO rnd_expenditures VALUES(2, 2021, 709805.00);
+INSERT INTO rnd_expenditures VALUES(2, 2022, 851766.00);
+INSERT INTO rnd_expenditures VALUES(2, 2023, 993727.00);
+INSERT INTO rnd_expenditures VALUES(2, 2024, 1135688.00);
+INSERT INTO rnd_expenditures VALUES(3, 2021, 2807113.00);
+INSERT INTO rnd_expenditures VALUES(3, 2022, 3368535.60);
+INSERT INTO rnd_expenditures VALUES(3, 2023, 3929958.20);
+INSERT INTO rnd_expenditures VALUES(3, 2024, 4491380.80);
+INSERT INTO rnd_expenditures VALUES(4, 2021, 2554301.00);
+INSERT INTO rnd_expenditures VALUES(4, 2022, 3065161.20);
+INSERT INTO rnd_expenditures VALUES(4, 2023, 3576021.40);
+INSERT INTO rnd_expenditures VALUES(4, 2024, 4086881.60);
+INSERT INTO rnd_expenditures VALUES(5, 2021, 2372427.00);
+INSERT INTO rnd_expenditures VALUES(5, 2022, 2846912.40);
+INSERT INTO rnd_expenditures VALUES(5, 2023, 3321397.80);
+INSERT INTO rnd_expenditures VALUES(5, 2024, 3795883.20);
+INSERT INTO rnd_expenditures VALUES(6, 2021, 1670528.00);
+INSERT INTO rnd_expenditures VALUES(6, 2022, 2004633.60);
+INSERT INTO rnd_expenditures VALUES(6, 2023, 2338739.20);
+INSERT INTO rnd_expenditures VALUES(6, 2024, 2672844.80);
+INSERT INTO rnd_expenditures VALUES(7, 2021, 1359791.00);
+INSERT INTO rnd_expenditures VALUES(7, 2022, 1631749.20);
+INSERT INTO rnd_expenditures VALUES(7, 2023, 1903707.40);
+INSERT INTO rnd_expenditures VALUES(7, 2024, 2175665.60);
+INSERT INTO rnd_expenditures VALUES(8, 2021, 1229295.00);
+INSERT INTO rnd_expenditures VALUES(8, 2022, 1475154.00);
+INSERT INTO rnd_expenditures VALUES(8, 2023, 1721013.00);
+INSERT INTO rnd_expenditures VALUES(8, 2024, 1966872.00);
+INSERT INTO rnd_expenditures VALUES(9, 2021, 4039336.00);
+INSERT INTO rnd_expenditures VALUES(9, 2022, 4847203.20);
+INSERT INTO rnd_expenditures VALUES(9, 2023, 5655070.40);
+INSERT INTO rnd_expenditures VALUES(9, 2024, 6462937.60);
+INSERT INTO rnd_expenditures VALUES(10, 2021, 766612.00);
+INSERT INTO rnd_expenditures VALUES(10, 2022, 919934.40);
+INSERT INTO rnd_expenditures VALUES(10, 2023, 1073256.80);
+INSERT INTO rnd_expenditures VALUES(10, 2024, 1226579.20);
+
+-- Products
+INSERT INTO products VALUES(1, 'Alpha Model 1', 1, 412.43, 203.36);
+INSERT INTO products VALUES(2, 'Alpha Model 2', 1, 1022.42, 638.50);
+INSERT INTO products VALUES(3, 'Alpha Model 3', 1, 1159.22, 788.89);
+INSERT INTO products VALUES(4, 'Beta Model 1', 2, 564.53, 358.87);
+INSERT INTO products VALUES(5, 'Beta Model 2', 2, 1271.32, 511.83);
+INSERT INTO products VALUES(6, 'Beta Model 3', 2, 1266.98, 860.61);
+INSERT INTO products VALUES(7, 'Beta Model 4', 2, 708.30, 327.37);
+INSERT INTO products VALUES(8, 'Gamma Model 1', 3, 422.65, 233.29);
+INSERT INTO products VALUES(9, 'Gamma Model 2', 3, 730.78, 392.85);
+INSERT INTO products VALUES(10, 'Gamma Model 3', 3, 617.43, 257.70);
+INSERT INTO products VALUES(11, 'Gamma Model 4', 3, 851.31, 383.03);
+INSERT INTO products VALUES(12, 'Delta Model 1', 4, 394.56, 204.09);
+INSERT INTO products VALUES(13, 'Delta Model 2', 4, 1054.37, 795.18);
+INSERT INTO products VALUES(14, 'Delta Model 3', 4, 733.96, 350.04);
+INSERT INTO products VALUES(15, 'Delta Model 4', 4, 383.47, 254.82);
+INSERT INTO products VALUES(16, 'Epsilon Model 1', 5, 1482.27, 1100.03);
+INSERT INTO products VALUES(17, 'Epsilon Model 2', 5, 1339.78, 739.63);
+INSERT INTO products VALUES(18, 'Epsilon Model 3', 5, 844.09, 619.26);
+INSERT INTO products VALUES(19, 'Epsilon Model 4', 5, 495.18, 268.44);
+INSERT INTO products VALUES(20, 'Zeta Model 1', 6, 620.37, 480.58);
+INSERT INTO products VALUES(21, 'Zeta Model 2', 6, 1077.64, 693.63);
+INSERT INTO products VALUES(22, 'Zeta Model 3', 6, 505.37, 349.54);
+INSERT INTO products VALUES(23, 'Zeta Model 4', 6, 496.08, 273.73);
+INSERT INTO products VALUES(24, 'Zeta Model 5', 6, 1487.43, 975.75);
+INSERT INTO products VALUES(25, 'Eta Model 1', 7, 563.54, 298.51);
+INSERT INTO products VALUES(26, 'Eta Model 2', 7, 1221.98, 516.13);
+INSERT INTO products VALUES(27, 'Eta Model 3', 7, 1286.16, 928.63);
+INSERT INTO products VALUES(28, 'Eta Model 4', 7, 781.40, 333.25);
+INSERT INTO products VALUES(29, 'Eta Model 5', 7, 1395.76, 874.96);
+INSERT INTO products VALUES(30, 'Theta Model 1', 8, 677.61, 448.70);
+INSERT INTO products VALUES(31, 'Theta Model 2', 8, 774.76, 593.32);
+INSERT INTO products VALUES(32, 'Theta Model 3', 8, 850.62, 430.37);
+INSERT INTO products VALUES(33, 'Theta Model 4', 8, 595.95, 372.20);
+INSERT INTO products VALUES(34, 'Theta Model 5', 8, 615.29, 389.99);
+INSERT INTO products VALUES(35, 'Iota Model 1', 9, 779.28, 380.08);
+INSERT INTO products VALUES(36, 'Iota Model 2', 9, 1497.05, 903.93);
+INSERT INTO products VALUES(37, 'Iota Model 3', 9, 409.09, 171.35);
+INSERT INTO products VALUES(38, 'Iota Model 4', 9, 431.58, 280.95);
+INSERT INTO products VALUES(39, 'Iota Model 5', 9, 1250.50, 711.36);
+INSERT INTO products VALUES(40, 'Kappa Model 1', 10, 761.72, 486.25);
+INSERT INTO products VALUES(41, 'Kappa Model 2', 10, 861.66, 431.32);
+INSERT INTO products VALUES(42, 'Kappa Model 3', 10, 963.87, 748.90);
+
+-- Salespeople
+INSERT INTO salespeople VALUES(1, 'Alice Smith', 1, NULL, '2010-01-15', 90000.0, 0.05);
+INSERT INTO salespeople VALUES(2, 'Bob Johnson', 3, NULL, '2011-04-22', 88000.0, 0.05);
+INSERT INTO salespeople VALUES(3, 'Carol Williams', 5, NULL, '2012-07-19', 87000.0, 0.05);
+INSERT INTO salespeople VALUES(4, 'David Brown', 7, NULL, '2013-09-30', 86000.0, 0.05);
+INSERT INTO salespeople VALUES(5, 'Eva Davis', 9, NULL, '2014-11-05', 85000.0, 0.05);
+INSERT INTO salespeople VALUES(6, 'Rep 6', 9, 1, '2019-11-11', 58557.76, 0.12);
+INSERT INTO salespeople VALUES(7, 'Rep 7', 1, 4, '2019-09-25', 58893.26, 0.14);
+INSERT INTO salespeople VALUES(8, 'Rep 8', 9, 3, '2018-03-12', 61812.55, 0.12);
+INSERT INTO salespeople VALUES(9, 'Rep 9', 1, 5, '2020-08-01', 58559.34, 0.11);
+INSERT INTO salespeople VALUES(10, 'Rep 10', 4, 3, '2015-04-19', 62734.75, 0.1);
+INSERT INTO salespeople VALUES(11, 'Rep 11', 2, 4, '2017-03-22', 60376.41, 0.12);
+INSERT INTO salespeople VALUES(12, 'Rep 12', 9, 3, '2021-04-18', 61776.33, 0.13);
+INSERT INTO salespeople VALUES(13, 'Rep 13', 7, 3, '2020-08-17', 60257.43, 0.1);
+INSERT INTO salespeople VALUES(14, 'Rep 14', 6, 1, '2015-10-18', 59150.57, 0.1);
+INSERT INTO salespeople VALUES(15, 'Rep 15', 1, 1, '2018-02-02', 62298.18, 0.09);
+INSERT INTO salespeople VALUES(16, 'Rep 16', 5, 2, '2022-04-18', 58661.56, 0.15);
+INSERT INTO salespeople VALUES(17, 'Rep 17', 10, 5, '2022-04-26', 60364.86, 0.11);
+INSERT INTO salespeople VALUES(18, 'Rep 18', 2, 1, '2021-06-14', 60055.51, 0.14);
+INSERT INTO salespeople VALUES(19, 'Rep 19', 2, 1, '2015-07-24', 59696.51, 0.14);
+INSERT INTO salespeople VALUES(20, 'Rep 20', 4, 2, '2018-09-15', 58700.91, 0.1);
+
+-- Sales (2021-2024) with trends by risk category
+INSERT INTO sales VALUES(1, 1, 13, '2021-02-15', 10, 2, 0.00);
+INSERT INTO sales VALUES(2, 2, 6, '2021-09-27', 10, 6, 0.00);
+INSERT INTO sales VALUES(3, 3, 7, '2021-03-14', 10, 2, 0.05);
+INSERT INTO sales VALUES(4, 1, 13, '2022-07-02', 20, 2, 0.00);
+INSERT INTO sales VALUES(5, 2, 12, '2022-07-09', 20, 1, 0.05);
+INSERT INTO sales VALUES(6, 3, 10, '2022-12-24', 20, 4, 0.05);
+INSERT INTO sales VALUES(7, 1, 8, '2023-05-07', 30, 2, 0.00);
+INSERT INTO sales VALUES(8, 2, 15, '2023-09-02', 30, 6, 0.05);
+INSERT INTO sales VALUES(9, 3, 6, '2023-10-16', 30, 1, 0.00);
+INSERT INTO sales VALUES(10, 1, 6, '2024-02-28', 40, 5, 0.00);
+INSERT INTO sales VALUES(11, 2, 7, '2024-02-22', 40, 5, 0.00);
+INSERT INTO sales VALUES(12, 3, 12, '2024-10-08', 40, 1, 0.00);
+INSERT INTO sales VALUES(13, 4, 15, '2021-07-22', 25, 1, 0.05);
+INSERT INTO sales VALUES(14, 5, 20, '2021-04-22', 25, 3, 0.05);
+INSERT INTO sales VALUES(15, 6, 9, '2021-07-05', 25, 3, 0.05);
+INSERT INTO sales VALUES(16, 7, 13, '2021-02-01', 25, 3, 0.05);
+INSERT INTO sales VALUES(17, 4, 15, '2022-02-03', 25, 5, 0.00);
+INSERT INTO sales VALUES(18, 5, 14, '2022-03-12', 25, 3, 0.00);
+INSERT INTO sales VALUES(19, 6, 20, '2022-06-10', 25, 2, 0.00);
+INSERT INTO sales VALUES(20, 7, 13, '2022-12-10', 25, 5, 0.00);
+INSERT INTO sales VALUES(21, 4, 16, '2023-05-22', 25, 5, 0.00);
+INSERT INTO sales VALUES(22, 5, 20, '2023-05-04', 25, 2, 0.00);
+INSERT INTO sales VALUES(23, 6, 17, '2023-03-09', 25, 5, 0.05);
+INSERT INTO sales VALUES(24, 7, 15, '2023-12-11', 25, 2, 0.00);
+INSERT INTO sales VALUES(25, 4, 16, '2024-05-17', 25, 6, 0.05);
+INSERT INTO sales VALUES(26, 5, 10, '2024-02-21', 25, 1, 0.05);
+INSERT INTO sales VALUES(27, 6, 19, '2024-01-01', 25, 3, 0.05);
+INSERT INTO sales VALUES(28, 7, 18, '2024-11-09', 25, 2, 0.00);
+INSERT INTO sales VALUES(29, 8, 17, '2021-09-23', 50, 4, 0.05);
+INSERT INTO sales VALUES(30, 9, 14, '2021-02-03', 50, 1, 0.00);
+INSERT INTO sales VALUES(31, 10, 14, '2021-06-19', 50, 1, 0.00);
+INSERT INTO sales VALUES(32, 11, 12, '2021-01-10', 50, 2, 0.05);
+INSERT INTO sales VALUES(33, 8, 20, '2022-06-07', 42, 1, 0.00);
+INSERT INTO sales VALUES(34, 9, 16, '2022-06-25', 42, 1, 0.05);
+INSERT INTO sales VALUES(35, 10, 15, '2022-03-08', 42, 6, 0.00);
+INSERT INTO sales VALUES(36, 11, 18, '2022-07-01', 42, 2, 0.00);
+INSERT INTO sales VALUES(37, 8, 17, '2023-07-26', 34, 3, 0.00);
+INSERT INTO sales VALUES(38, 9, 10, '2023-12-04', 34, 2, 0.05);
+INSERT INTO sales VALUES(39, 10, 19, '2023-08-08', 34, 1, 0.00);
+INSERT INTO sales VALUES(40, 11, 19, '2023-06-10', 34, 4, 0.00);
+INSERT INTO sales VALUES(41, 8, 9, '2024-11-07', 26, 1, 0.05);
+INSERT INTO sales VALUES(42, 9, 11, '2024-02-25', 26, 3, 0.05);
+INSERT INTO sales VALUES(43, 10, 11, '2024-09-13', 26, 6, 0.05);
+INSERT INTO sales VALUES(44, 11, 6, '2024-05-06', 26, 1, 0.05);
+INSERT INTO sales VALUES(45, 12, 6, '2021-10-14', 10, 1, 0.05);
+INSERT INTO sales VALUES(46, 13, 17, '2021-07-20', 10, 3, 0.00);
+INSERT INTO sales VALUES(47, 14, 12, '2021-04-09', 10, 5, 0.00);
+INSERT INTO sales VALUES(48, 15, 17, '2021-01-17', 10, 4, 0.00);
+INSERT INTO sales VALUES(49, 12, 11, '2022-02-22', 20, 4, 0.05);
+INSERT INTO sales VALUES(50, 13, 15, '2022-11-28', 20, 3, 0.00);
+INSERT INTO sales VALUES(51, 14, 17, '2022-09-10', 20, 3, 0.05);
+INSERT INTO sales VALUES(52, 15, 11, '2022-12-10', 20, 4, 0.00);
+INSERT INTO sales VALUES(53, 12, 9, '2023-11-13', 30, 4, 0.00);
+INSERT INTO sales VALUES(54, 13, 15, '2023-05-13', 30, 5, 0.00);
+INSERT INTO sales VALUES(55, 14, 10, '2023-04-14', 30, 3, 0.05);
+INSERT INTO sales VALUES(56, 15, 13, '2023-08-22', 30, 4, 0.00);
+INSERT INTO sales VALUES(57, 12, 14, '2024-12-06', 40, 4, 0.00);
+INSERT INTO sales VALUES(58, 13, 10, '2024-11-21', 40, 5, 0.05);
+INSERT INTO sales VALUES(59, 14, 7, '2024-11-10', 40, 2, 0.00);
+INSERT INTO sales VALUES(60, 15, 18, '2024-03-01', 40, 2, 0.00);
+INSERT INTO sales VALUES(61, 16, 9, '2021-10-28', 25, 4, 0.00);
+INSERT INTO sales VALUES(62, 17, 13, '2021-11-19', 25, 4, 0.00);
+INSERT INTO sales VALUES(63, 18, 17, '2021-07-16', 25, 6, 0.05);
+INSERT INTO sales VALUES(64, 19, 9, '2021-11-23', 25, 2, 0.00);
+INSERT INTO sales VALUES(65, 16, 20, '2022-07-08', 25, 1, 0.00);
+INSERT INTO sales VALUES(66, 17, 18, '2022-09-15', 25, 6, 0.00);
+INSERT INTO sales VALUES(67, 18, 14, '2022-02-15', 25, 2, 0.00);
+INSERT INTO sales VALUES(68, 19, 18, '2022-11-17', 25, 4, 0.05);
+INSERT INTO sales VALUES(69, 16, 18, '2023-10-27', 25, 4, 0.05);
+INSERT INTO sales VALUES(70, 17, 19, '2023-08-06', 25, 5, 0.05);
+INSERT INTO sales VALUES(71, 18, 13, '2023-04-27', 25, 3, 0.05);
+INSERT INTO sales VALUES(72, 19, 18, '2023-08-21', 25, 5, 0.00);
+INSERT INTO sales VALUES(73, 16, 10, '2024-02-23', 25, 4, 0.05);
+INSERT INTO sales VALUES(74, 17, 9, '2024-06-11', 25, 3, 0.00);
+INSERT INTO sales VALUES(75, 18, 8, '2024-04-13', 25, 2, 0.00);
+INSERT INTO sales VALUES(76, 19, 17, '2024-02-14', 25, 2, 0.05);
+INSERT INTO sales VALUES(77, 20, 11, '2021-08-14', 50, 5, 0.00);
+INSERT INTO sales VALUES(78, 21, 9, '2021-07-25', 50, 4, 0.00);
+INSERT INTO sales VALUES(79, 22, 19, '2021-07-16', 50, 5, 0.00);
+INSERT INTO sales VALUES(80, 23, 11, '2021-07-28', 50, 3, 0.05);
+INSERT INTO sales VALUES(81, 24, 14, '2021-12-18', 50, 6, 0.00);
+INSERT INTO sales VALUES(82, 20, 13, '2022-05-14', 42, 2, 0.05);
+INSERT INTO sales VALUES(83, 21, 6, '2022-06-22', 42, 4, 0.05);
+INSERT INTO sales VALUES(84, 22, 17, '2022-08-05', 42, 2, 0.00);
+INSERT INTO sales VALUES(85, 23, 20, '2022-10-19', 42, 4, 0.00);
+INSERT INTO sales VALUES(86, 24, 7, '2022-07-05', 42, 6, 0.05);
+INSERT INTO sales VALUES(87, 20, 8, '2023-05-13', 34, 1, 0.05);
+INSERT INTO sales VALUES(88, 21, 9, '2023-06-11', 34, 4, 0.05);
+INSERT INTO sales VALUES(89, 22, 10, '2023-05-27', 34, 4, 0.00);
+INSERT INTO sales VALUES(90, 23, 13, '2023-12-18', 34, 1, 0.00);
+INSERT INTO sales VALUES(91, 24, 11, '2023-11-03', 34, 2, 0.00);
+INSERT INTO sales VALUES(92, 20, 18, '2024-04-07', 26, 1, 0.00);
+INSERT INTO sales VALUES(93, 21, 15, '2024-04-05', 26, 2, 0.05);
+INSERT INTO sales VALUES(94, 22, 16, '2024-10-07', 26, 1, 0.05);
+INSERT INTO sales VALUES(95, 23, 17, '2024-06-06', 26, 3, 0.00);
+INSERT INTO sales VALUES(96, 24, 18, '2024-05-04', 26, 2, 0.00);
+INSERT INTO sales VALUES(97, 25, 20, '2021-10-22', 25, 3, 0.05);
+INSERT INTO sales VALUES(98, 26, 12, '2021-04-03', 25, 6, 0.00);
+INSERT INTO sales VALUES(99, 27, 7, '2021-05-28', 25, 6, 0.00);
+INSERT INTO sales VALUES(100, 28, 18, '2021-01-12', 25, 5, 0.05);
+INSERT INTO sales VALUES(101, 29, 16, '2021-02-17', 25, 3, 0.05);
+INSERT INTO sales VALUES(102, 25, 6, '2022-08-04', 25, 4, 0.05);
+INSERT INTO sales VALUES(103, 26, 11, '2022-08-23', 25, 6, 0.00);
+INSERT INTO sales VALUES(104, 27, 12, '2022-12-17', 25, 2, 0.05);
+INSERT INTO sales VALUES(105, 28, 15, '2022-08-15', 25, 5, 0.05);
+INSERT INTO sales VALUES(106, 29, 19, '2022-10-09', 25, 6, 0.05);
+INSERT INTO sales VALUES(107, 25, 19, '2023-02-09', 25, 2, 0.05);
+INSERT INTO sales VALUES(108, 26, 9, '2023-10-20', 25, 4, 0.05);
+INSERT INTO sales VALUES(109, 27, 11, '2023-08-28', 25, 1, 0.05);
+INSERT INTO sales VALUES(110, 28, 8, '2023-04-12', 25, 4, 0.05);
+INSERT INTO sales VALUES(111, 29, 11, '2023-10-23', 25, 3, 0.05);
+INSERT INTO sales VALUES(112, 25, 14, '2024-09-07', 25, 1, 0.00);
+INSERT INTO sales VALUES(113, 26, 9, '2024-07-16', 25, 6, 0.00);
+INSERT INTO sales VALUES(114, 27, 17, '2024-11-23', 25, 4, 0.05);
+INSERT INTO sales VALUES(115, 28, 13, '2024-02-10', 25, 1, 0.00);
+INSERT INTO sales VALUES(116, 29, 12, '2024-04-10', 25, 6, 0.05);
+INSERT INTO sales VALUES(117, 30, 13, '2021-09-12', 50, 5, 0.05);
+INSERT INTO sales VALUES(118, 31, 17, '2021-06-12', 50, 5, 0.05);
+INSERT INTO sales VALUES(119, 32, 10, '2021-05-08', 50, 3, 0.00);
+INSERT INTO sales VALUES(120, 33, 17, '2021-06-04', 50, 2, 0.00);
+INSERT INTO sales VALUES(121, 34, 9, '2021-12-16', 50, 2, 0.05);
+INSERT INTO sales VALUES(122, 30, 17, '2022-09-20', 42, 5, 0.05);
+INSERT INTO sales VALUES(123, 31, 7, '2022-05-08', 42, 2, 0.05);
+INSERT INTO sales VALUES(124, 32, 8, '2022-01-23', 42, 3, 0.00);
+INSERT INTO sales VALUES(125, 33, 10, '2022-01-18', 42, 1, 0.05);
+INSERT INTO sales VALUES(126, 34, 17, '2022-11-28', 42, 2, 0.05);
+INSERT INTO sales VALUES(127, 30, 7, '2023-10-10', 34, 1, 0.05);
+INSERT INTO sales VALUES(128, 31, 13, '2023-06-06', 34, 4, 0.00);
+INSERT INTO sales VALUES(129, 32, 10, '2023-02-27', 34, 4, 0.00);
+INSERT INTO sales VALUES(130, 33, 12, '2023-02-19', 34, 4, 0.00);
+INSERT INTO sales VALUES(131, 34, 8, '2023-10-10', 34, 2, 0.00);
+INSERT INTO sales VALUES(132, 30, 9, '2024-09-25', 26, 1, 0.05);
+INSERT INTO sales VALUES(133, 31, 15, '2024-10-08', 26, 5, 0.05);
+INSERT INTO sales VALUES(134, 32, 13, '2024-05-28', 26, 4, 0.05);
+INSERT INTO sales VALUES(135, 33, 10, '2024-10-02', 26, 5, 0.00);
+INSERT INTO sales VALUES(136, 34, 18, '2024-11-07', 26, 2, 0.05);
+INSERT INTO sales VALUES(137, 35, 16, '2021-03-08', 10, 1, 0.00);
+INSERT INTO sales VALUES(138, 36, 14, '2021-03-01', 10, 1, 0.05);
+INSERT INTO sales VALUES(139, 37, 13, '2021-10-16', 10, 6, 0.05);
+INSERT INTO sales VALUES(140, 38, 6, '2021-05-23', 10, 2, 0.05);
+INSERT INTO sales VALUES(141, 39, 17, '2021-02-22', 10, 4, 0.00);
+INSERT INTO sales VALUES(142, 35, 20, '2022-11-19', 20, 3, 0.00);
+INSERT INTO sales VALUES(143, 36, 12, '2022-09-08', 20, 1, 0.00);
+INSERT INTO sales VALUES(144, 37, 20, '2022-03-03', 20, 3, 0.00);
+INSERT INTO sales VALUES(145, 38, 8, '2022-10-24', 20, 3, 0.05);
+INSERT INTO sales VALUES(146, 39, 13, '2022-08-23', 20, 1, 0.05);
+INSERT INTO sales VALUES(147, 35, 17, '2023-05-17', 30, 4, 0.05);
+INSERT INTO sales VALUES(148, 36, 13, '2023-10-02', 30, 1, 0.05);
+INSERT INTO sales VALUES(149, 37, 17, '2023-10-09', 30, 3, 0.00);
+INSERT INTO sales VALUES(150, 38, 7, '2023-11-27', 30, 2, 0.00);
+INSERT INTO sales VALUES(151, 39, 18, '2023-05-19', 30, 6, 0.00);
+INSERT INTO sales VALUES(152, 35, 18, '2024-08-17', 40, 2, 0.05);
+INSERT INTO sales VALUES(153, 36, 20, '2024-03-19', 40, 3, 0.05);
+INSERT INTO sales VALUES(154, 37, 16, '2024-02-16', 40, 4, 0.05);
+INSERT INTO sales VALUES(155, 38, 12, '2024-06-22', 40, 3, 0.00);
+INSERT INTO sales VALUES(156, 39, 19, '2024-06-14', 40, 2, 0.05);
+INSERT INTO sales VALUES(157, 40, 10, '2021-07-27', 25, 6, 0.00);
+INSERT INTO sales VALUES(158, 41, 13, '2021-06-09', 25, 1, 0.05);
+INSERT INTO sales VALUES(159, 42, 7, '2021-09-27', 25, 4, 0.00);
+INSERT INTO sales VALUES(160, 40, 16, '2022-08-14', 25, 5, 0.00);
+INSERT INTO sales VALUES(161, 41, 9, '2022-06-20', 25, 5, 0.05);
+INSERT INTO sales VALUES(162, 42, 16, '2022-01-07', 25, 4, 0.05);
+INSERT INTO sales VALUES(163, 40, 14, '2023-05-15', 25, 2, 0.05);
+INSERT INTO sales VALUES(164, 41, 7, '2023-11-20', 25, 1, 0.00);
+INSERT INTO sales VALUES(165, 42, 17, '2023-05-18', 25, 2, 0.00);
+INSERT INTO sales VALUES(166, 40, 14, '2024-02-08', 25, 4, 0.00);
+INSERT INTO sales VALUES(167, 41, 13, '2024-11-27', 25, 1, 0.00);
+INSERT INTO sales VALUES(168, 42, 13, '2024-05-17', 25, 6, 0.05);

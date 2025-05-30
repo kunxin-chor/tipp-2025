@@ -1,7 +1,7 @@
 // Core game logic - NO DOM/UI code here
 
 class Building {
-    constructor({ name, baseCost, identifier, tags = [], basePowerCost = 1 }) {
+    constructor({ name, baseCost, identifier, tags = [], basePowerCost = 1, description = '' }) {
         if (new.target === Building) {
             throw new Error("Cannot instantiate abstract class Building directly.");
         }
@@ -11,6 +11,7 @@ class Building {
         this.tags = tags;
         this.basePowerCost = basePowerCost;
         this.count = 0;
+        this.description = description || 'No description provided.';
     }
 
     // Power required for all levels of this building (power cost x number of building)
@@ -19,20 +20,37 @@ class Building {
     }
 
     // Unified production method: subclasses must implement getProductionAmount()
-    getProduction() {
-        const prod = this.getProductionAmount();
+    getProduction(game) {
+        const prod = this.getProductionAmount(game);
+        // 'game' is available for advanced buildings, but unused by default
         return {
             money: (prod.money || 0) * this.count,
             power: (prod.power || 0) * this.count
         };
     }
 
-    getCost() {
+    getCost(game) {
+        // 'game' is available for advanced cost logic, but unused by default
         return Math.floor(this.baseCost * Math.pow(1.15, this.count));
     }
 
     buy() {
         this.count++;
+    }
+
+    // Returns a string formula for production
+    getFormula(game) {
+        return `Production: (per building) ${JSON.stringify(this.getProductionAmount(game))}`;
+    }
+
+    // Returns a string preview of current and next production
+    getPreview(game) {
+        const current = this.getProduction(game);
+        // Simulate next level
+        this.count++;
+        const next = this.getProduction(game);
+        this.count--;
+        return `Current: $${current.money || 0}, Power: ${current.power || 0} | Next: $${next.money || 0}, Power: ${next.power || 0}`;
     }
 
     // Abstract method
@@ -48,9 +66,20 @@ class CoinFactory extends Building {
             baseCost: options.baseCost || 10,
             identifier: options.identifier || 'moneygen',
             tags: options.tags || ['money'],
-            basePowerCost: options.basePowerCost || 2
+            basePowerCost: options.basePowerCost || 2,
+            description: options.description || 'Prints money every tick. Each building produces a fixed amount of money.'
         });
         this.moneyPerBuilding = options.moneyPerBuilding || 1;
+    }
+    getFormula(game) {
+        return `Production: ${this.moneyPerBuilding} money per building per tick.`;
+    }
+    getPreview(game) {
+        const curr = this.getProduction(game).money;
+        this.count++;
+        const next = this.getProduction(game).money;
+        this.count--;
+        return `Current: $${curr}/tick | Next: $${next}/tick`;
     }
     getProductionAmount() {
         return { money: this.moneyPerBuilding, power: 0 };
@@ -65,9 +94,20 @@ class PowerPlant extends Building {
             baseCost: options.baseCost || 50,
             identifier: options.identifier || 'powergen',
             tags: options.tags || ['power'],
-            basePowerCost: 0
+            basePowerCost: 0,
+            description: options.description || 'Generates power. Each building increases your total available power.'
         });
         this.powerPerBuilding = options.powerPerBuilding || 2;
+    }
+    getFormula(game) {
+        return `Production: ${this.powerPerBuilding} power per building per tick.`;
+    }
+    getPreview(game) {
+        const curr = this.getProduction(game).power;
+        this.count++;
+        const next = this.getProduction(game).power;
+        this.count--;
+        return `Current: Power ${curr}/tick | Next: Power ${next}/tick`;
     }
     getProductionAmount() {
         return { money: 0, power: this.powerPerBuilding };
@@ -81,10 +121,21 @@ class FusionReactor extends Building {
             baseCost: options.baseCost || 200,
             identifier: options.identifier || 'hybridgen',
             tags: options.tags || ['money', 'power'],
-            basePowerCost: options.basePowerCost || 3
+            basePowerCost: options.basePowerCost || 3,
+            description: options.description || 'Produces both money and power each tick.'
         });
         this.moneyPerBuilding = options.moneyPerBuilding || 2;
         this.powerPerBuilding = options.powerPerBuilding || 1;
+    }
+    getFormula(game) {
+        return `Production: ${this.moneyPerBuilding} money & ${this.powerPerBuilding} power per building per tick.`;
+    }
+    getPreview(game) {
+        const curr = this.getProduction(game);
+        this.count++;
+        const next = this.getProduction(game);
+        this.count--;
+        return `Current: $${curr.money}/tick, Power: ${curr.power}/tick | Next: $${next.money}/tick, Power: ${next.power}/tick`;
     }
     getProductionAmount() {
         return { money: this.moneyPerBuilding, power: this.powerPerBuilding };
@@ -98,14 +149,26 @@ class FusionReactor extends Building {
 
 // Abstract base class for upgrades
 class Upgrade {
-    constructor({ name, cost, isUnlocked = () => true }) {
+    constructor({ name, cost, description = '' }) {
         if (new.target === Upgrade) {
             throw new Error("Cannot instantiate abstract class Upgrade directly.");
         }
         this.name = name;
         this.cost = cost;
-        this.isUnlocked = isUnlocked;
         this.bought = false;
+        this.description = description || 'No description provided.';
+    }
+    // Returns a string formula for upgrade effect
+    getFormula(game) {
+        return 'See upgrade subclass for details.';
+    }
+    // Returns a string preview of effect if purchased
+    getPreview(game) {
+        return 'See upgrade subclass for details.';
+    }
+    // Default: always unlocked
+    isUnlocked(game) {
+        return true;
     }
 
     applyEffect(game) {
@@ -122,10 +185,28 @@ class Upgrade {
 
 // Upgrade that multiplies production of a building
 class ProductionMultiplierUpgrade extends Upgrade {
-    constructor({ name, cost, buildingIndex, multiplier, isUnlocked }) {
-        super({ name, cost, isUnlocked });
+    constructor({ name, cost, buildingIndex, multiplier, description }) {
+        super({ name, cost, description: description || 'Doubles the production of a specific building.' });
         this.buildingIndex = buildingIndex;
         this.multiplier = multiplier;
+    }
+    isUnlocked(game) {
+        // Unlocked if building count >= 5
+        return game.buildings[this.buildingIndex] && game.buildings[this.buildingIndex].count >= 5;
+    }
+    getFormula(game) {
+        return `Multiplies production of building #${this.buildingIndex} by ${this.multiplier}.`;
+    }
+    getPreview(game) {
+        const b = game.buildings[this.buildingIndex];
+        if (!b) return 'Building not found.';
+        const before = b.getProduction(game);
+        // Simulate effect
+        const oldBase = b.baseProduction;
+        b.baseProduction *= this.multiplier;
+        const after = b.getProduction(game);
+        b.baseProduction = oldBase;
+        return `Current: $${before.money}/tick, Power: ${before.power}/tick | After upgrade: $${after.money}/tick, Power: ${after.power}/tick`;
     }
 
     applyEffect(game) {
@@ -137,10 +218,28 @@ class ProductionMultiplierUpgrade extends Upgrade {
 
 // Upgrade that multiplies production for all buildings with a given tag
 class TagProductionMultiplierUpgrade extends Upgrade {
-    constructor({ name, cost, tag, multiplier, isUnlocked }) {
-        super({ name, cost, isUnlocked });
+    constructor({ name, cost, tag, multiplier, description }) {
+        super({ name, cost, description: description || 'Doubles the production of all buildings with a given tag.' });
         this.tag = tag;
         this.multiplier = multiplier;
+    }
+    isUnlocked(game) {
+        // Unlocked if any building with tag has count >= 3
+        return game.queryTags(this.tag).some(b => b.count >= 3);
+    }
+    getFormula(game) {
+        return `Multiplies production of all '${this.tag}' buildings by ${this.multiplier}.`;
+    }
+    getPreview(game) {
+        const buildings = game.queryTags(this.tag);
+        if (!buildings.length) return 'No buildings with this tag.';
+        const before = buildings.map(b => b.getProduction(game));
+        // Simulate effect
+        const oldBases = buildings.map(b => b.baseProduction);
+        buildings.forEach(b => b.baseProduction *= this.multiplier);
+        const after = buildings.map(b => b.getProduction(game));
+        buildings.forEach((b, i) => b.baseProduction = oldBases[i]);
+        return before.map((prod, i) => `B${i}: $${prod.money}/tick, Power: ${prod.power}/tick | After: $${after[i].money}/tick, Power: ${after[i].power}/tick`).join('; ');
     }
 
     applyEffect(game) {
@@ -201,7 +300,7 @@ class Game {
             cost: 50,
             buildingIndex: 0,
             multiplier: 2,
-            isUnlocked: (g) => g.buildings[0].count >= 5
+            description: 'Doubles the output of your Coin Printers.'
         }));
 
         this.addUpgrade(new TagProductionMultiplierUpgrade({
@@ -209,7 +308,7 @@ class Game {
             cost: 300,
             tag: 'power',
             multiplier: 2,
-            isUnlocked: (g) => g.queryTags('power').some(b => b.count >= 3)
+            description: 'Doubles the output of all Power Plants.'
         }));
     }
 
@@ -229,13 +328,23 @@ class Game {
         this.upgrades.push(upgrade);
     }
 
+    // Query for an upgrade by name or identifier
+    getUpgrade(query) {
+        // query can be a string (name or identifier) or a predicate function
+        if (typeof query === 'function') {
+            return this.upgrades.find(query);
+        } else {
+            return this.upgrades.find(u => u.name === query || u.identifier === query);
+        }
+    }
+
     canAfford(cost) {
         return this.money >= cost;
     }
 
     buyBuilding(index) {
         const building = this.buildings[index];
-        const cost = building.getCost();
+        const cost = building.getCost(this);
         // Simulate buying this building
         // If this building produces power, allow always
         if (building.getProductionAmount().power > 0) {
@@ -265,7 +374,7 @@ class Game {
     getProductionPerSecond() {
         // Returns {money, power}
         return this.buildings.reduce((totals, b) => {
-            const prod = b.getProduction();
+            const prod = b.getProduction(this);
             return {
                 money: totals.money + (prod.money || 0),
                 power: totals.power + (prod.power || 0)

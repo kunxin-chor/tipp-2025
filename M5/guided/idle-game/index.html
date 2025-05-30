@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Idle Game</title>
+    <!-- FontAwesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="city-container">
+        <h1><i class="fa-solid fa-city fa-icon"></i> City Builder Idle</h1>
+        <div class="resources-panel">
+            <i class="fa-solid fa-coins fa-icon"></i>
+            <span class="resources">Money: 0 | Power: 0 / 0</span>
+        </div>
+        <div class="production-panel">
+            <i class="fa-solid fa-industry fa-icon"></i>
+            <span class="production">Production/sec: 0</span>
+        </div>
+        <button id="manual-collect">Collect</button>
+        <h2><i class="fa-solid fa-building fa-icon"></i> Buildings</h2>
+        <div id="buildings"></div>
+        <h2><i class="fa-solid fa-arrow-up fa-icon"></i> Upgrades</h2>
+        <div id="upgrades"></div>
+    </div>
+    <script src="game.js"></script>
+    <script src="view.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
